@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Halaman Tidak Ditemukan</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230891b2'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='18' fill='white'>RD</text></svg>" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  </head>
+  <body>
+    <div class="page-404">
+      <div>
+        <h1>404</h1>
+        <p>Halaman yang Anda cari tidak ditemukan.</p>
+        <a href="index.html" class="btn btn-primary">
+          <i data-lucide="home" class="btn-icon"></i>
+          Kembali ke Beranda
+        </a>
+      </div>
+    </div>
+    <script>
+      // Apply saved theme
+      const t = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", t);
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.lucide) lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>

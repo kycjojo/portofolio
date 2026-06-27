@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rochmad Djojo Oktabianto — IT Network Sysadmin & Full-Stack Engineer</title>
+    <meta name="description" content="Portofolio Rochmad Djojo Oktabianto — Full-Stack Engineer & Data Enthusiast. Mahasiswa D4 Teknik Informatika PENS dengan latar belakang IT Networking & System Administration, berpengalaman membangun aplikasi web end-to-end." />
+    <meta name="author" content="Rochmad Djojo Oktabianto" />
+    <meta name="keywords" content="Rochmad Djojo Oktabianto, Full-Stack Engineer, Data Science, IT Networking, System Administration, Web Developer, PENS, Portofolio" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rochmad Djojo Oktabianto — IT Network Sysadmin & Full-Stack Engineer" />
+    <meta property="og:description" content="Portofolio profesional Rochmad Djojo Oktabianto. Mahasiswa D4 Teknik Informatika PENS yang berfokus pada Data Science dan pengembangan aplikasi web." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:image" content="assets/images/profile/foto-profil.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rochmad Djojo Oktabianto — Data Analyst & Full-Stack Developer" />
+    <meta name="twitter:description" content="Portofolio profesional Rochmad Djojo Oktabianto — Data Analyst & Full-Stack Developer." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230891b2'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='18' fill='white'>RD</text></svg>" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Devicons (for skill icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-spinner"></div>
+      <span class="loading-text">Memuat portofolio...</span>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navigasi utama">
+      <div class="container">
+        <a href="#hero" class="nav-logo" aria-label="Kembali ke beranda">
+          <div class="nav-logo-icon">RD</div>
+          <span>Jojo</span>
+        </a>
+
+        <div class="nav-links" id="nav-links" role="menubar">
+          <a href="#about" class="nav-link" role="menuitem">Tentang</a>
+          <a href="#skills" class="nav-link" role="menuitem">Skill</a>
+          <a href="#projects" class="nav-link" role="menuitem">Proyek</a>
+          <a href="#education" class="nav-link" role="menuitem">Pendidikan</a>
+          <a href="#contact" class="nav-link" role="menuitem">Kontak</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle tema gelap/terang">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu navigasi" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="nav-overlay" id="nav-overlay"></div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Open to Work
+            </div>
+            <p class="hero-name">Halo, saya <strong>Rochmad Djojo Oktabianto</strong></p>
+            <h1 class="hero-title">
+              IT Network Sysadmin &amp; <span class="accent">Full-Stack</span> Engineer,<br />
+              dengan Passion di <span class="accent">Data Science</span>.
+            </h1>
+            <p class="hero-description">
+              Mahasiswa D4 Teknik Informatika PENS yang aktif di dua bidang sekaligus — mengelola infrastruktur jaringan sebagai IT Network System Admin dan membangun aplikasi web end-to-end sebagai Full-Stack Engineer, dengan ketertarikan yang terus berkembang di dunia Data Science.
+            </p>
+
+            <div class="hero-cta">
+              <a href="#projects" class="btn btn-primary">
+                <i data-lucide="folder-open" class="btn-icon"></i>
+                Lihat Proyek
+              </a>
+              <a href="assets/cv/cv-rochmad-djojo.pdf" class="btn btn-secondary" id="btn-download-cv" download>
+                <i data-lucide="download" class="btn-icon"></i>
+                Download CV
+              </a>
+              <a href="#contact" class="btn btn-ghost">
+                <i data-lucide="mail" class="btn-icon"></i>
+                Hubungi Saya
+              </a>
+            </div>
+
+            <div class="hero-social">
+              <a href="https://github.com/kycjojo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </a>
+              <a href="https://instagram.com/edj0j_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              </a>
+              <a href="https://wa.me/6285856827303" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i data-lucide="message-circle"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image-wrapper">
+            <div class="hero-image-decoration"></div>
+            <div class="hero-image-container">
+              <img src="assets/images/profile/foto-profil.jpg" alt="Foto profil Rochmad Djojo Oktabianto" loading="eager"
+                onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 340 340%22><rect width=%22340%22 height=%22340%22 fill=%22%23112240%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22Inter,sans-serif%22 font-weight=%22700%22 font-size=%2280%22 fill=%22%2300d4ff%22>RD</text></svg>'" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-label">Tentang Saya</span>
+            <h2 class="section-title">Mengenal Saya Lebih Dekat</h2>
+            <p class="section-subtitle">IT Network System Admin & Full-Stack Engineer dengan keahlian lintas domain — dari infrastruktur jaringan hingga pengembangan aplikasi web.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text reveal">
+              <p>
+                Saya adalah Rochmad Djojo Oktabianto, biasa dipanggil Jojo — seorang IT Network System Admin sekaligus Full-Stack Engineer yang saat ini menempuh D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS).
+              </p>
+              <p>
+                Di bidang jaringan, saya berpengalaman dalam konfigurasi dan administrasi infrastruktur jaringan, manajemen server, serta troubleshooting sistem. Kemampuan ini saya buktikan melalui prestasi di kompetisi ITNSA (IT Network System Administration) tingkat kabupaten, provinsi, dan nasional.
+              </p>
+              <p>
+                Di sisi lain, saya juga aktif sebagai Full-Stack Engineer — merancang dan membangun aplikasi web dari frontend hingga backend. Kombinasi keahlian di bidang jaringan dan pengembangan perangkat lunak membuat saya mampu melihat solusi teknologi secara menyeluruh. Ke depan, saya aktif mengeksplorasi Data Science untuk melengkapi keahlian teknis yang saya miliki.
+              </p>
+            </div>
+
+            <div class="about-highlights">
+              <div class="about-card reveal reveal-delay-1">
+                <div class="about-card-header">
+                  <div class="about-card-icon">🎓</div>
+                  <div>
+                    <div class="about-card-title">D4 Teknik Informatika</div>
+                    <div class="about-card-subtitle">PENS — 2026 - Sekarang</div>
+                  </div>
+                </div>
+                <p>Menempuh pendidikan diploma empat di bidang Teknik Informatika dengan fokus pada pengembangan perangkat lunak.</p>
+              </div>
+
+              <div class="about-card reveal reveal-delay-2">
+                <div class="about-card-header">
+                  <div class="about-card-icon">🎯</div>
+                  <div>
+                    <div class="about-card-title">Tujuan Karier</div>
+                    <div class="about-card-subtitle">IT Networking & Full-Stack Engineering</div>
+                  </div>
+                </div>
+                <p>IT Network System Admin & Full-Stack Engineer yang aktif mencari peluang di bidang teknologi jaringan dan pengembangan perangkat lunak.</p>
+              </div>
+
+              <div class="about-card reveal reveal-delay-3">
+                <div class="about-card-header">
+                  <div class="about-card-icon">📍</div>
+                  <div>
+                    <div class="about-card-title">Jombang, Jawa Timur</div>
+                    <div class="about-card-subtitle">Indonesia</div>
+                  </div>
+                </div>
+                <p>Terbuka untuk pekerjaan remote, onsite, maupun hybrid di seluruh Indonesia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="section" id="skills" style="background: var(--bg-secondary);">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-label">Skill & Teknologi</span>
+            <h2 class="section-title">Teknologi yang Saya Gunakan</h2>
+            <p class="section-subtitle">Beragam teknologi dan tools yang saya gunakan dalam mengembangkan solusi digital.</p>
+          </div>
+
+          <div class="skills-grid" id="skills-grid">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-label">Proyek</span>
+            <h2 class="section-title">Proyek Unggulan</h2>
+            <p class="section-subtitle">Beberapa proyek yang telah saya kerjakan secara individu dari awal hingga selesai.</p>
+          </div>
+
+          <div class="project-filters reveal" id="project-filters">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="Aplikasi Web">Aplikasi Web</button>
+            <button class="filter-btn" data-filter="Sistem Informasi">Sistem Informasi</button>
+          </div>
+
+          <div class="projects-grid" id="projects-grid">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="section" id="education" style="background: var(--bg-secondary);">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-label">Pendidikan & Penghargaan</span>
+            <h2 class="section-title">Latar Belakang Pendidikan</h2>
+            <p class="section-subtitle">Perjalanan pendidikan dan pencapaian yang telah saya raih.</p>
+          </div>
+
+          <div class="education-timeline reveal">
+            <div class="education-item">
+              <span class="education-year">2026 — Sekarang</span>
+              <h3 class="education-degree">D4 Teknik Informatika</h3>
+              <p class="education-institution">Politeknik Elektronika Negeri Surabaya (PENS)</p>
+              <span class="education-status">
+                <span>●</span> Masih aktif kuliah
+              </span>
+              <p class="education-description">
+                Menempuh pendidikan diploma empat di bidang Teknik Informatika dengan fokus pada pengembangan perangkat lunak dan teknologi informasi.
+              </p>
+            </div>
+            <div class="education-item">
+              <span class="education-year">2023 — 2026</span>
+              <h3 class="education-degree">Teknik Komputer &amp; Jaringan (TKJ)</h3>
+              <p class="education-institution">SMK Negeri Gudo</p>
+              <span class="education-status">
+                <span>✓</span> Lulus
+              </span>
+              <p class="education-description">
+                Menempuh pendidikan di jurusan Teknik Komputer &amp; Jaringan dengan spesialisasi IT Network System Administration (ITNSA). Aktif mengikuti kompetisi LKS dan WorldSkills di bidang jaringan dan meraih prestasi tingkat kabupaten hingga provinsi.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievements-grid reveal">
+            <div class="achievement-card">
+              <div class="achievement-icon">🥇</div>
+              <h3 class="achievement-title">Juara 1 LKS</h3>
+              <p class="achievement-subtitle">IT Network System Administration (ITNSA)</p>
+              <p class="achievement-level">Tingkat Kabupaten</p>
+            </div>
+            <div class="achievement-card">
+              <div class="achievement-icon">🥉</div>
+              <h3 class="achievement-title">Juara 3 WOW Skills</h3>
+              <p class="achievement-subtitle">IT Network System Administration (ITNSA)</p>
+              <p class="achievement-level">Kompetisi Swasta — Malang</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-label">Kontak</span>
+            <h2 class="section-title">Mari Terhubung</h2>
+            <p class="section-subtitle">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info reveal">
+              <div>
+                <h3 class="contact-info-title">Hubungi Saya</h3>
+                <p class="contact-info-description">
+                  Saat ini saya aktif mencari peluang kerja dan terbuka untuk kolaborasi. Silakan hubungi saya melalui formulir atau channel di bawah ini.
+                </p>
+              </div>
+
+              <div class="contact-channels">
+                <a href="https://wa.me/6285856827303" target="_blank" rel="noopener noreferrer" class="contact-channel">
+                  <div class="contact-channel-icon">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+                  <div>
+                    <div class="contact-channel-label">WhatsApp</div>
+                    <div class="contact-channel-value">+62 858-5682-7303</div>
+                  </div>
+                </a>
+                <a href="https://github.com/kycjojo" target="_blank" rel="noopener noreferrer" class="contact-channel">
+                  <div class="contact-channel-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </div>
+                  <div>
+                    <div class="contact-channel-label">GitHub</div>
+                    <div class="contact-channel-value">kycjojo</div>
+                  </div>
+                </a>
+                <a href="https://instagram.com/edj0j_" target="_blank" rel="noopener noreferrer" class="contact-channel">
+                  <div class="contact-channel-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </div>
+                  <div>
+                    <div class="contact-channel-label">Instagram</div>
+                    <div class="contact-channel-value">@edj0j_</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form-wrapper reveal reveal-delay-2">
+              <form class="contact-form" id="contact-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-name">Nama</label>
+                    <input type="text" id="contact-name" name="name" placeholder="Nama lengkap Anda" required />
+                    <span class="error-text">Nama wajib diisi</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="email" placeholder="email@contoh.com" required />
+                    <span class="error-text">Email tidak valid</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject">Subjek</label>
+                  <input type="text" id="contact-subject" name="subject" placeholder="Subjek pesan" required />
+                  <span class="error-text">Subjek wajib diisi</span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-message">Pesan</label>
+                  <textarea id="contact-message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                  <span class="error-text">Pesan wajib diisi</span>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                  <i data-lucide="send" class="btn-icon"></i>
+                  Kirim Pesan
+                </button>
+              </form>
+              <div class="form-success" id="form-success">
+                ✅ Pesan Anda berhasil dikirim! Saya akan segera merespons.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-copy">
+          &copy; 2026 <span>Rochmad Djojo Oktabianto</span>. Dibuat dengan dedikasi.
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/kycjojo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="https://instagram.com/edj0j_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/6285856827303" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i data-lucide="message-circle"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6285856827303" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat via WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+      <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
