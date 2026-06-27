@@ -24,7 +24,7 @@ const PROFILE = {
 
   social: {
     github: "https://github.com/kycjojo",
-    instagram: "https://instagram.com/edj0j_",
+    instagram: "https://instagram.com/rdj0j_",
     whatsapp: "https://wa.me/6285856827303",
   },
 
