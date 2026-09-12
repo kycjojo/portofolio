@@ -1,5 +1,9 @@
 # Portofolio — Rochmad Djojo Oktabianto
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-portojojoit.vercel.app-BF9A30?style=for-the-badge&logo=vercel&logoColor=white)](https://portojojoit.vercel.app)
+
+> 🌐 **Live Website**: [https://portojojoit.vercel.app](https://portojojoit.vercel.app)
+
 Website portofolio profesional pribadi **Rochmad Djojo Oktabianto (Jojo)** — IT Network System Administrator & ITNSA Medalist (D4 Teknik Informatika, Politeknik Elektronika Negeri Surabaya - PENS).
 
 ---
@@ -125,10 +129,11 @@ Dokumen resmi sensitif (seperti PDF Curriculum Vitae lengkap dan file PDF sertif
 
 ## 🌐 Panduan Deployment
 
-### Vercel (Rekomendasi)
-1. Hubungkan repositori GitHub ini ke [Vercel](https://vercel.com).
-2. Konfigurasi clean URL sudah otomatis ditangani oleh file `vercel.json`.
-3. Klik **Deploy**.
+### Vercel (Production Live)
+Website telah di-deploy dan aktif secara live di:  
+🔗 **[https://portojojoit.vercel.app](https://portojojoit.vercel.app)**
+
+Konfigurasi clean URL ditangani secara otomatis melalui file `vercel.json`.
 
 ### GitHub Pages
 1. Masuk ke tab **Settings** repositori di GitHub.

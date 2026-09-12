@@ -28,7 +28,8 @@ const PROFILE = {
     whatsapp: "https://wa.me/6285856827303",
   },
 
-  email: "rochmaddjojooktabianto@gmail.com",
+  website: "https://portojojoit.vercel.app",
+  email: "jojookta@it.student.pens.ac.id",
 };
 
 export default PROFILE;
