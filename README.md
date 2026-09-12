@@ -1,176 +1,142 @@
 # Portofolio — Rochmad Djojo Oktabianto
 
-Website portofolio pribadi Rochmad Djojo Oktabianto (Jojo) — IT Network System Administrator & ITNSA Medalist.
+Website portofolio profesional pribadi **Rochmad Djojo Oktabianto (Jojo)** — IT Network System Administrator & ITNSA Medalist (D4 Teknik Informatika, Politeknik Elektronika Negeri Surabaya - PENS).
 
-## 🚀 Fitur
+---
 
-- ✅ Dark & Light mode (toggle)
-- ✅ Responsive design (mobile-first)
-- ✅ Animasi scroll reveal
-- ✅ Loading screen
-- ✅ Filter proyek berdasarkan kategori
-- ✅ Halaman studi kasus proyek
-- ✅ Form kontak dengan validasi
-- ✅ Tombol WhatsApp floating
-- ✅ Download CV
-- ✅ SEO-friendly dengan Open Graph
-- ✅ Tombol back to top
-- ✅ Halaman 404 custom
-- ✅ Navigasi sticky & responsive
-- ✅ Accessibility (ARIA, keyboard nav, focus-visible)
+## 🚀 Fitur Utama
 
-## 🛠️ Teknologi
+- ✅ **Three-Ink Editorial Design**: Tipografi modern, layout bergaya editorial dengan palet warna kontras elegan (Pitch Dark, Alabaster Cream, & Antique Gold).
+- ✅ **Dark & Light Mode**: Switch tema dinamis dengan persistensi preferensi via `localStorage`.
+- ✅ **Responsive & Mobile-First**: Tampilan optimal di semua perangkat (Desktop, Tablet, & Smartphone).
+- ✅ **Filter Proyek & Kompetisi**: Filter interaktif untuk memilah pencapaian lomba dan proyek teknis.
+- ✅ **Halaman Detail Studi Kasus**: Analisis mendalam per kompetisi/proyek (latar belakang, arsitektur, tantangan, dan solusi).
+- ✅ **Formulir Kontak Cerdas**: Integrasi langsung dengan klien email (`mailto:`) tanpa perantara server pihak ketiga.
+- ✅ **Aksesibilitas & SEO**: Semantic HTML5, metadata Open Graph, Twitter Card, rasio kontras WCAG AA, serta navigasi keyboard yang ramah pengguna.
+- ✅ **Halaman 404 Kustom**: Halaman penanganan error dengan styling terintegrasi.
 
-- HTML5
-- CSS3 (Vanilla CSS, Custom Properties)
-- JavaScript (ES Modules)
-- Google Fonts (Inter)
-- Lucide Icons
-- Devicons
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Markup & Struktur**: HTML5 Semantik
+- **Styling**: Vanilla CSS3 (CSS Custom Properties, Flexbox, CSS Grid)
+- **Tipografi**: [Google Fonts](https://fonts.google.com/) — *Plus Jakarta Sans* & *JetBrains Mono*
+- **Logika & Interaktivitas**: Vanilla JavaScript (ES6+ Modules)
+- **Ikonografi**: [Lucide Icons](https://lucide.dev/) & [Devicon](https://devicon.dev/)
+
+---
 
 ## 📂 Struktur Folder
 
-```
+```text
 portofolio/
-├── index.html                 # Halaman utama (single page)
-├── project-detail.html        # Halaman detail/studi kasus proyek
-├── 404.html                   # Halaman 404
+├── index.html                 # Halaman utama (beranda portofolio)
+├── project-detail.html        # Halaman detail / studi kasus proyek & kompetisi
+├── 404.html                   # Halaman 404 custom
 ├── css/
-│   └── style.css              # Seluruh styles (design system, themes, components, responsive)
+│   └── style.css              # Seluruh sistem desain (tokens, typography, responsive)
 ├── js/
-│   ├── app.js                 # Script utama (tema, navbar, skill, proyek, kontak)
-│   └── project-detail.js      # Script halaman detail proyek
+│   ├── app.js                 # Logika interaksi beranda, tema, navbar, filter proyek
+│   └── project-detail.js      # Rendering data dinamis halaman detail studi kasus
 ├── data/
-│   ├── profile.js             # Data profil (nama, bio, kontak, sosmed)
-│   ├── skills.js              # Data skill per kategori
-│   ├── projects.js            # Data proyek (studi kasus)
-│   └── education.js           # Data pendidikan & penghargaan
+│   ├── profile.js             # Profil diri, bio, kontak, dan tautan sosial media
+│   ├── skills.js              # Keahlian teknis (Networking, SysAdmin, Security, Tools)
+│   ├── projects.js            # Riwayat kompetisi resmi & studi kasus infrastruktur
+│   └── education.js           # Riwayat pendidikan, sertifikasi, & penghargaan
 ├── assets/
 │   ├── images/
-│   │   ├── profile/           # Foto profil
-│   │   └── projects/          # Screenshot proyek
-│   └── cv/                    # File CV (PDF)
-└── README.md
+│   │   ├── profile/           # Foto profil (foto-profil.jpg)
+│   │   ├── projects/          # Dokumentasi teknis proyek
+│   │   └── certificates/      # Preview visual sertifikat (PNG)
+│   ├── certificates/          # Dokumen PDF sertifikat resmi (disimpan privat secara lokal)
+│   └── cv/                    # File PDF Curriculum Vitae (disimpan privat secara lokal)
+├── vercel.json                # Konfigurasi routing clean URLs untuk deployment Vercel
+├── .gitignore                 # Proteksi keamanan (mengecualikan PDF & file privat)
+└── README.md                  # Dokumentasi proyek
 ```
 
-## 🏃 Cara Menjalankan
+---
 
-### Opsi 1: Buka langsung di browser
+## 🏃 Cara Menjalankan Secara Lokal
 
-Cukup buka file `index.html` di browser.
+### Opsi 1: VS Code Live Server (Direkomendasikan)
+1. Pasang ekstensi **Live Server** di VS Code.
+2. Klik kanan pada `index.html` → pilih **Open with Live Server**.
 
-> ⚠️ **Catatan:** Beberapa fitur (ES Modules) membutuhkan server lokal. Jika ada error, gunakan Opsi 2.
-
-### Opsi 2: Menggunakan Live Server
-
-1. Install ekstensi **Live Server** di VS Code.
-2. Klik kanan pada `index.html` → **Open with Live Server**.
-
-### Opsi 3: Menggunakan Python
-
+### Opsi 2: Python HTTP Server
 ```bash
-cd portofolio
 python -m http.server 3000
 ```
+Lalu buka peramban dan akses `http://localhost:3000`.
 
-Buka `http://localhost:3000` di browser.
-
-### Opsi 4: Menggunakan npx serve
-
+### Opsi 3: Node.js (npx serve)
 ```bash
 npx serve .
 ```
 
-## ✏️ Cara Mengganti Data Diri
+---
 
-Semua data dipisahkan ke file tersendiri di folder `data/` agar mudah diedit:
+## ✏️ Panduan Pengelolaan Data
 
-| File | Isi |
-|------|-----|
-| `data/profile.js` | Nama, bio, headline, deskripsi, kontak, sosmed |
-| `data/skills.js` | Skill per kategori |
-| `data/projects.js` | Proyek lengkap (studi kasus) |
-| `data/education.js` | Pendidikan & penghargaan |
+Seluruh konten situs dikelola secara modular pada folder `data/`:
 
-### Mengganti Foto Profil
+| File | Keterangan Konten |
+|---|---|
+| [`data/profile.js`](file:///d:/portofolio/data/profile.js) | Nama lengkap, gelar/headline, bio, kontak email, dan akun profesional. |
+| [`data/skills.js`](file:///d:/portofolio/data/skills.js) | Daftar keahlian teknis berdasarkan kategori spesialisasi. |
+| [`data/projects.js`](file:///d:/portofolio/data/projects.js) | Daftar kompetisi/proyek beserta ringkasan, masalah, dan solusi teknis. |
+| [`data/education.js`](file:///d:/portofolio/data/education.js) | Riwayat institusi pendidikan dan daftar pencapaian medali/juara. |
 
-1. Simpan foto ke `assets/images/profile/foto-profil.jpg`
-2. Ukuran rekomendasi: 400x400px (persegi)
-3. Format: JPG atau PNG
+---
 
-### Menambahkan CV
+## 🎨 Sistem Desain (Three-Ink Palette)
 
-1. Simpan file CV ke `assets/cv/cv-rochmad-djojo.pdf`
-2. Tombol "Download CV" akan otomatis berfungsi
-
-### Menambahkan Proyek Baru
-
-Edit file `data/projects.js` dan tambahkan objek baru:
-
-```javascript
-{
-  id: "nama-unik-proyek",
-  name: "Nama Proyek",
-  category: "Aplikasi Web",
-  tagline: "Deskripsi singkat",
-  thumbnail: "assets/images/projects/screenshot.png",
-  thumbnailDark: null,
-  liveDemo: "https://demo.com",
-  github: "https://github.com/user/repo",
-  summary: "Ringkasan proyek...",
-  background: "Latar belakang...",
-  problem: "Permasalahan...",
-  solution: "Solusi...",
-  features: ["Fitur 1", "Fitur 2"],
-  techStack: ["React", "Node.js"],
-  role: "Full-Stack Developer",
-  teamType: "Individu",
-  status: "Selesai",
-}
-```
-
-### Mengganti Warna & Tema
-
-Edit variabel CSS di `css/style.css`:
+Portofolio ini menerapkan sistem desain kontras tinggi:
 
 ```css
-/* Dark Theme */
+/* Dark Mode (Default) */
 [data-theme="dark"] {
-  --accent-primary: #00d4ff;    /* Warna aksen utama */
-  --accent-secondary: #00b4d8;  /* Warna aksen sekunder */
-  --bg-primary: #0a192f;        /* Background utama */
-  /* ... */
+  --bg-primary: #0F0F0F;       /* Pitch Dark Black */
+  --bg-surface: #171512;       /* Elevated Dark Card */
+  --text-primary: #FAF8F5;     /* Warm Alabaster Cream */
+  --text-secondary: #C8C2BA;   /* Muted Cream */
+  --accent-gold: #BF9A30;      /* Antique Gold */
+  --rule: 1px solid #2B2620;  /* Subtle Divider */
 }
 
-/* Light Theme */
+/* Light Mode */
 [data-theme="light"] {
-  --accent-primary: #0369a1;
-  --accent-secondary: #0891b2;
-  --bg-primary: #f0f4f8;
-  /* ... */
+  --bg-primary: #FAF8F5;       /* Warm Alabaster Cream */
+  --bg-surface: #FFFFFF;       /* Pure White Card */
+  --text-primary: #0F0F0F;     /* Pitch Dark Black */
+  --text-secondary: #4A4640;   /* Muted Charcoal */
+  --accent-gold: #9E7D1E;      /* Deep Gold */
 }
 ```
 
-## 🌐 Deployment
+---
 
-### Vercel
+## 🛡️ Keamanan & Privasi Data
 
-1. Push ke GitHub repository
-2. Hubungkan repo ke [vercel.com](https://vercel.com)
-3. Deploy otomatis
+Dokumen resmi sensitif (seperti PDF Curriculum Vitae lengkap dan file PDF sertifikat asli beresolusi penuh) dikecualikan dari repositori publik melalui konfigurasi `.gitignore`. Website menampilkan bukti autentik melalui **gambar preview visual (PNG)** dan **nomor registrasi sertifikat resmi**, menjaga integritas data tanpa mengekspos data identitas pribadi (PII) ke publik.
 
-### Netlify
+---
 
-1. Push ke GitHub repository
-2. Hubungkan repo ke [netlify.com](https://netlify.com)
-3. Deploy otomatis
+## 🌐 Panduan Deployment
+
+### Vercel (Rekomendasi)
+1. Hubungkan repositori GitHub ini ke [Vercel](https://vercel.com).
+2. Konfigurasi clean URL sudah otomatis ditangani oleh file `vercel.json`.
+3. Klik **Deploy**.
 
 ### GitHub Pages
+1. Masuk ke tab **Settings** repositori di GitHub.
+2. Buka menu **Pages** di panel kiri.
+3. Pada **Build and deployment**, pilih branch `main` dan folder `/ (root)`, lalu klik **Save**.
 
-1. Push ke GitHub repository
-2. Buka Settings → Pages → Source: main branch
-3. Website akan tersedia di `https://username.github.io/repo-name`
+---
 
 ## 📝 Lisensi
 
-© 2026 Rochmad Djojo Oktabianto. All rights reserved.
+© 2026 Rochmad Djojo Oktabianto. Seluruh hak cipta dilindungi undang-undang.
