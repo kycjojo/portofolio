@@ -14,8 +14,6 @@ PRODUCT.md
 PROJECT_REDESIGN_BRIEF.md
 
 # Sensitive personal documents & PDFs
-*.pdf
-assets/cv/
 assets/certificates/
 
 # Dependency directories & tooling
