@@ -1791,9 +1791,85 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* ── Print ── */
 @media print {
-  .navbar, .back-to-top, .whatsapp-float, .loading-screen { display: none !important; }
+  /* Force warna background & teks tercetak */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Reset ke light theme untuk print */
+  :root, [data-theme="dark"] {
+    --ink-black:      #0F0F0F !important;
+    --ink-gold:       #BF9A30 !important;
+    --ink-gold-lt:    #D4B050 !important;
+    --paper:          #F0EBE1 !important;
+    --paper-dark:     #E4DDD1 !important;
+    --paper-white:    #F8F5EF !important;
+    --text-primary:   #0F0F0F !important;
+    --text-secondary: #4A4540 !important;
+    --text-tertiary:  #7A736A !important;
+    --bg-primary:     #F0EBE1 !important;
+    --bg-secondary:   #F8F5EF !important;
+    --bg-dark:        #0F0F0F !important;
+    --bg-card:        #F8F5EF !important;
+  }
+
+  /* Sembunyikan elemen non-konten */
+  .navbar,
+  .back-to-top,
+  .whatsapp-float,
+  .loading-screen,
+  .btn,
+  .hero-cta,
+  .contact-form-wrapper,
+  .mobile-nav-toggle { display: none !important; }
+
+  /* Layout dasar */
+  html, body {
+    background: #F0EBE1 !important;
+    color: #0F0F0F !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 11pt !important;
+  }
+
+  /* Container penuh */
+  .container {
+    max-width: 100% !important;
+    padding: 0 1cm !important;
+  }
+
+  /* Page break */
   .section { page-break-inside: avoid; }
-  body { background: white; color: black; }
+  .project-card { page-break-inside: avoid; }
+  h1, h2, h3 { page-break-after: avoid; }
+
+  /* Hero */
+  .hero {
+    padding-top: 1.5cm !important;
+    min-height: auto !important;
+  }
+
+  /* Cards tetap berbackground */
+  .card, .project-card, .cert-card, .timeline-item {
+    background: #F8F5EF !important;
+    border: 1px solid #0F0F0F !important;
+    box-shadow: none !important;
+  }
+
+  /* Gold accent tetap terlihat */
+  .text-gold, .hero-eyebrow, .section-label, .badge {
+    color: #BF9A30 !important;
+  }
+
+  /* Links */
+  a { color: #0F0F0F !important; text-decoration: none !important; }
+  a[href]::after { content: none !important; }
+
+  /* Matikan animasi */
+  .reveal { opacity: 1 !important; transform: none !important; }
+  * { animation: none !important; transition: none !important; }
 }
 
 /* ── Reduced motion ── */
