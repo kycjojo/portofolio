@@ -28,25 +28,9 @@ function initLoadingScreen() {
 
 // ── Theme ──
 function initTheme() {
-  const toggle = document.getElementById("theme-toggle");
   const html = document.documentElement;
   const saved = localStorage.getItem("theme") || "dark";
   html.setAttribute("data-theme", saved);
-  updateThemeIcon(saved);
-
-  toggle.addEventListener("click", () => {
-    const current = html.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    html.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    updateThemeIcon(next);
-  });
-}
-
-function updateThemeIcon(theme) {
-  const toggle = document.getElementById("theme-toggle");
-  toggle.innerHTML = `<i data-lucide="${theme === "dark" ? "sun" : "moon"}"></i>`;
-  if (window.lucide) window.lucide.createIcons();
 }
 
 // ── Navbar ──
@@ -101,12 +85,12 @@ function renderProjectDetail() {
   const project = PROJECTS.find((p) => p.id === projectId);
 
   if (!project) {
-    document.getElementById("project-title").textContent = "Proyek Tidak Ditemukan";
-    document.getElementById("project-tagline").textContent = "Proyek yang Anda cari tidak tersedia.";
+    document.getElementById("project-title").textContent = "Kompetisi Tidak Ditemukan";
+    document.getElementById("project-tagline").textContent = "Data kompetisi yang Anda cari tidak tersedia.";
     document.getElementById("project-main").innerHTML = `
-      <p>Silakan kembali ke halaman proyek untuk melihat daftar proyek yang tersedia.</p>
-      <a href="index.html#projects" class="btn btn-primary" style="margin-top: 1rem;">
-        <i data-lucide="arrow-left" class="btn-icon"></i> Kembali ke Proyek
+      <p>Silakan kembali ke halaman utama untuk melihat rekam jejak kompetisi yang tersedia.</p>
+      <a href="index.html#competitions" class="btn btn-primary" style="margin-top: 1rem;">
+        <i data-lucide="arrow-left" class="btn-icon"></i> Kembali ke Kompetisi
       </a>
     `;
     if (window.lucide) window.lucide.createIcons();
@@ -133,7 +117,7 @@ function renderProjectDetail() {
   if (project.liveDemo) {
     actionsHTML += `
       <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        <i data-lucide="external-link" class="btn-icon"></i> Live Demo
+        <i data-lucide="award" class="btn-icon"></i> Buka Sertifikat (PDF)
       </a>
     `;
   }
@@ -184,7 +168,15 @@ function renderProjectDetail() {
     </div>
 
     <div class="project-sidebar-card">
-      <h3>Informasi Proyek</h3>
+      <h3>Informasi Kompetisi</h3>
+      <div class="info-item">
+        <span class="info-label">Kategori</span>
+        <span class="info-value">${project.category}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Status</span>
+        <span class="info-value">${project.status}</span>
+      </div>
       <div class="info-item">
         <span class="info-label">Peran</span>
         <span class="info-value">${project.role}</span>
@@ -193,24 +185,34 @@ function renderProjectDetail() {
         <span class="info-label">Tipe</span>
         <span class="info-value">${project.teamType}</span>
       </div>
-      <div class="info-item">
-        <span class="info-label">Status</span>
-        <span class="info-value">${project.status}</span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">Kategori</span>
-        <span class="info-value">${project.category}</span>
-      </div>
+      ${project.date ? `<div class="info-item">
+        <span class="info-label">Tanggal</span>
+        <span class="info-value">${project.date}</span>
+      </div>` : ""}
+      ${project.location ? `<div class="info-item">
+        <span class="info-label">Lokasi</span>
+        <span class="info-value">${project.location}</span>
+      </div>` : ""}
+      ${project.organizer ? `<div class="info-item">
+        <span class="info-label">Penyelenggara</span>
+        <span class="info-value">${project.organizer}</span>
+      </div>` : ""}
+      ${project.certificateNo ? `<div class="info-item">
+        <span class="info-label">No. Sertifikat</span>
+        <span class="info-value" style="font-family:var(--font-mono);font-size:0.75rem;">${project.certificateNo}</span>
+      </div>` : ""}
     </div>
 
     ${
       project.liveDemo
         ? `
     <div class="project-sidebar-card">
-      <h3>Tautan</h3>
-      <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
-        <i data-lucide="external-link" class="btn-icon"></i> Buka Live Demo
-      </a>
+      <h3>Dokumen</h3>
+      <div style="padding: 0.5rem var(--space-lg) var(--space-md);">
+        <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">
+          <i data-lucide="award" class="btn-icon"></i> Buka Sertifikat (PDF)
+        </a>
+      </div>
     </div>`
         : ""
     }
@@ -224,7 +226,7 @@ function renderProjectDetail() {
     <div class="project-card">
       <div class="project-card-image">
         <img src="${p.thumbnail}" alt="Screenshot ${p.name}" loading="lazy"
-          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 220%22><rect width=%22400%22 height=%22220%22 fill=%22%23112240%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22Inter,sans-serif%22 font-weight=%22600%22 font-size=%2220%22 fill=%22%2300d4ff%22>${p.name}</text></svg>'" />
+          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 220%22><rect width=%22400%22 height=%22220%22 fill=%22%231C1916%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22Barlow Condensed,sans-serif%22 font-weight=%22700%22 font-size=%2218%22 fill=%22%23BF9A30%22>${p.name}</text></svg>'" />
       </div>
       <div class="project-card-body">
         <span class="project-card-category">${p.category}</span>
@@ -232,7 +234,7 @@ function renderProjectDetail() {
         <p class="project-card-tagline">${p.tagline}</p>
         <p class="project-card-description">${p.summary}</p>
         <div class="project-card-footer">
-          <a href="project-detail?id=${p.id}" class="btn btn-sm btn-ghost">
+          <a href="project-detail.html?id=${p.id}" class="btn btn-sm btn-ghost">
             <i data-lucide="arrow-right" class="btn-icon"></i> Studi Kasus
           </a>
         </div>

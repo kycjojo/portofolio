@@ -1,6 +1,6 @@
 # Portofolio — Rochmad Djojo Oktabianto
 
-Website portofolio pribadi Rochmad Djojo Oktabianto (Jojo) — Data Analyst & Full-Stack Developer.
+Website portofolio pribadi Rochmad Djojo Oktabianto (Jojo) — IT Network System Administrator & ITNSA Medalist.
 
 ## 🚀 Fitur
 

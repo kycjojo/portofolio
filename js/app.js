@@ -40,30 +40,12 @@ function initLoadingScreen() {
   }, 3000);
 }
 
-// ── Theme Toggle ──
+// ── Theme (fixed dark, no toggle) ──
 function initTheme() {
-  const toggle = document.getElementById("theme-toggle");
   const html = document.documentElement;
-
-  // Load saved theme or default to dark
+  // Always default to dark, respect saved preference
   const saved = localStorage.getItem("theme") || "dark";
   html.setAttribute("data-theme", saved);
-  updateThemeIcon(saved);
-
-  toggle.addEventListener("click", () => {
-    const current = html.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    html.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    updateThemeIcon(next);
-  });
-}
-
-function updateThemeIcon(theme) {
-  const toggle = document.getElementById("theme-toggle");
-  const iconName = theme === "dark" ? "sun" : "moon";
-  toggle.innerHTML = `<i data-lucide="${iconName}"></i>`;
-  if (window.lucide) window.lucide.createIcons();
 }
 
 // ── Navbar ──
@@ -75,7 +57,6 @@ function initNavbar() {
   const links = navLinks.querySelectorAll(".nav-link");
 
   // Scroll effect
-  let lastScroll = 0;
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
     if (scrollY > 50) {
@@ -83,7 +64,6 @@ function initNavbar() {
     } else {
       navbar.classList.remove("scrolled");
     }
-    lastScroll = scrollY;
 
     // Active nav link
     updateActiveNavLink();
@@ -216,6 +196,12 @@ function renderSkills() {
     vercel: "devicon-vercel-original",
     netlify: "devicon-netlify-plain",
     heroku: "devicon-heroku-plain",
+    // ITNSA-specific additions
+    nginx: "devicon-nginx-plain",
+    php: "devicon-php-plain",
+    bash: "devicon-bash-plain",
+    windows11: "devicon-windows8-plain",
+    proxmox: "devicon-linux-plain",
   };
 
   grid.innerHTML = SKILLS.map(
@@ -230,7 +216,7 @@ function renderSkills() {
           .map(
             (skill) => `
           <span class="skill-tag">
-            <i class="${iconMap[skill.icon] || ""}"></i>
+            ${iconMap[skill.icon] ? `<i class="${iconMap[skill.icon]}"></i>` : ""}
             ${skill.name}
           </span>
         `
@@ -254,25 +240,29 @@ function renderProjects() {
     (project) => `
     <div class="project-card reveal" data-category="${project.category}">
       <div class="project-card-image">
-        <img src="${project.thumbnail}" alt="Screenshot ${project.name}" loading="lazy"
-          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 220%22><rect width=%22400%22 height=%22220%22 fill=%22%23112240%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22Inter,sans-serif%22 font-weight=%22600%22 font-size=%2220%22 fill=%22%2300d4ff%22>${project.name}</text></svg>'" />
+        <img src="${project.thumbnail}" alt="Sertifikat ${project.name}" loading="lazy"
+          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 220%22><rect width=%22400%22 height=%22220%22 fill=%22%231C1916%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22Barlow Condensed,sans-serif%22 font-weight=%22700%22 font-size=%2218%22 fill=%22%23BF9A30%22>${project.name}</text></svg>'" />
         <div class="project-card-overlay">
           ${
             project.liveDemo
               ? `<a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-              <i data-lucide="external-link" class="btn-icon"></i> Live Demo
+              <i data-lucide="award" class="btn-icon"></i> Sertifikat
             </a>`
               : ""
           }
-          <a href="project-detail?id=${project.id}" class="btn btn-sm btn-secondary">
+          <a href="project-detail.html?id=${project.id}" class="btn btn-sm btn-secondary">
             <i data-lucide="eye" class="btn-icon"></i> Detail
           </a>
         </div>
       </div>
       <div class="project-card-body">
-        <span class="project-card-category">${project.category}</span>
+        <div class="project-card-meta">
+          <span class="project-card-category">${project.category}</span>
+          ${getLevelBadge(project.category)}
+        </div>
         <h3 class="project-card-title">${project.name}</h3>
         <p class="project-card-tagline">${project.tagline}</p>
+        ${project.organizer ? `<p class="project-card-organizer">${project.organizer}</p>` : ""}
         <p class="project-card-description">${project.summary}</p>
         <div class="project-card-tech">
           ${project.techStack
@@ -285,11 +275,11 @@ function renderProjects() {
           ${
             project.liveDemo
               ? `<a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
-              <i data-lucide="external-link" class="btn-icon"></i> Live Demo
+              <i data-lucide="award" class="btn-icon"></i> Sertifikat
             </a>`
               : ""
           }
-          <a href="project-detail?id=${project.id}" class="btn btn-sm btn-ghost">
+          <a href="project-detail.html?id=${project.id}" class="btn btn-sm btn-ghost">
             <i data-lucide="arrow-right" class="btn-icon"></i> Studi Kasus
           </a>
         </div>
@@ -301,6 +291,18 @@ function renderProjects() {
   // Re-observe and re-init icons
   initScrollReveal();
   if (window.lucide) window.lucide.createIcons();
+}
+
+// ── Competition Level Badge ──
+function getLevelBadge(category) {
+  const map = {
+    "LKS Provinsi": { cls: "competition-badge--province", icon: "🏅", label: "Tingkat Provinsi" },
+    "LKS Kabupaten": { cls: "competition-badge--regency", icon: "🥇", label: "Tingkat Kabupaten" },
+    "Kompetisi Swasta": { cls: "competition-badge--private", icon: "🥉", label: "Kompetisi Swasta" },
+  };
+  const b = map[category];
+  if (!b) return "";
+  return `<span class="competition-badge ${b.cls}">${b.icon} ${b.label}</span>`;
 }
 
 // ── Project Filters ──
@@ -348,7 +350,7 @@ function initContactForm() {
     let hasError = false;
     const fields = {
       name: form.querySelector("#contact-name"),
-      email: form.querySelector("#contact-email"),
+      email: form.querySelector("#contact-email-input"),
       subject: form.querySelector("#contact-subject"),
       message: form.querySelector("#contact-message"),
     };
@@ -383,11 +385,10 @@ function initContactForm() {
     if (window.lucide) window.lucide.createIcons();
 
     setTimeout(() => {
-      form.style.display = "none";
       success.classList.add("show");
 
       // Construct mailto link as backup
-      const mailtoLink = `mailto:rochmaddjojooktabianto@gmail.com?subject=${encodeURIComponent(fields.subject.value)}&body=${encodeURIComponent(`Dari: ${fields.name.value} (${fields.email.value})\n\n${fields.message.value}`)}`;
+      const mailtoLink = `mailto:jojookta@it.student.pens.ac.id?subject=${encodeURIComponent(fields.subject.value)}&body=${encodeURIComponent(`Dari: ${fields.name.value} (${fields.email.value})\n\n${fields.message.value}`)}`;
       window.open(mailtoLink, "_blank");
 
       // Reset after 5s

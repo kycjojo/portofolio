@@ -9,9 +9,20 @@ walkthrough_*.png
 *.webp
 *.log
 
-# Dependency directories
+# Internal briefs and specs
+PRODUCT.md
+PROJECT_REDESIGN_BRIEF.md
+
+# Sensitive personal documents & PDFs
+*.pdf
+assets/cv/
+assets/certificates/
+
+# Dependency directories & tooling
 node_modules/
 jspm_packages/
+.impeccable/
+impeccable/
 
 # IDEs and editors
 .idea/
