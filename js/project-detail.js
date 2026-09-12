@@ -114,6 +114,13 @@ function renderProjectDetail() {
 
   // Actions
   let actionsHTML = "";
+  if (project.liveDemo) {
+    actionsHTML += `
+      <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <i data-lucide="award" class="btn-icon"></i> Buka Sertifikat (PDF)
+      </a>
+    `;
+  }
   if (project.github) {
     actionsHTML += `
       <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
@@ -195,6 +202,16 @@ function renderProjectDetail() {
         <span class="info-value" style="font-family:var(--font-mono);font-size:0.75rem;">${project.certificateNo}</span>
       </div>` : ""}
     </div>
+
+    ${project.liveDemo ? `
+    <div class="project-sidebar-card">
+      <h3>Dokumen</h3>
+      <div style="padding: 0.5rem var(--space-lg) var(--space-md);">
+        <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">
+          <i data-lucide="award" class="btn-icon"></i> Buka Sertifikat (PDF)
+        </a>
+      </div>
+    </div>` : ""}
   `;
 
 
