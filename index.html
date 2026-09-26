@@ -56,7 +56,10 @@
     <div class="container">
       <a href="#hero" class="nav-logo" aria-label="Kembali ke beranda">
         <div class="nav-logo-icon">RD</div>
-        <span>Jojo</span>
+        <div class="nav-logo-text">
+          <span class="nav-brand-name">Rochmad Djojo</span>
+          <span class="nav-brand-sub">ITNSA Specialist</span>
+        </div>
       </a>
 
       <!-- Desktop Links -->
@@ -69,6 +72,10 @@
       </div>
 
       <div class="nav-actions">
+        <div class="nav-status-pill">
+          <span class="status-pulse-dot"></span>
+          <span>Open to Work</span>
+        </div>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Buka menu" aria-expanded="false">
           <span></span>
           <span></span>
@@ -84,30 +91,42 @@
     <div class="container">
       <!-- Left: Identity -->
       <div class="hero-content">
+        <div class="hero-status-tag">
+          <span class="status-pulse-dot"></span>
+          <span>D4 TEKNIK INFORMATIKA PENS &nbsp;•&nbsp; IT NETWORK SYSADMIN</span>
+        </div>
+
         <h1 class="hero-name">
-          Rochmad<br>Djojo<br>Oktabianto
+          <span class="hero-name-primary">Rochmad Djojo</span>
+          <span class="hero-name-secondary">Oktabianto</span>
         </h1>
 
-        <p class="hero-role">IT Network System Administrator &nbsp;·&nbsp; ITNSA Medalist</p>
+        <p class="hero-role">
+          <span class="role-title">IT Network System Administrator</span>
+          <span class="role-badge-gold">ITNSA Medalist</span>
+        </p>
 
         <p class="hero-description">
-          Mahasiswa D4 Teknik Informatika PENS. Peraih Medallion for Excellence LKS Jawa Timur ke-34 bidang ITNSA —
-          keahlian administrasi server Linux &amp; Windows, routing enterprise Cisco/MikroTik, dan troubleshooting
-          jaringan berstandar WorldSkills.
+          Mahasiswa D4 Teknik Informatika PENS. Peraih <strong>Medallion for Excellence LKS Jawa Timur ke-34</strong> bidang ITNSA —
+          keahlian administrasi server Linux Debian &amp; Windows Server enterprise, routing dinamis Cisco/MikroTik (OSPF &amp; BGP), 
+          serta audit &amp; troubleshooting jaringan berstandar WorldSkills.
         </p>
 
         <div class="hero-cta">
           <a href="#competitions" class="btn btn-primary" id="hero-cta-competitions">
-            <i data-lucide="award" class="btn-icon"></i>
-            Lihat Kompetisi
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            Lihat Rekam Jejak
           </a>
           <a href="#contact" class="btn btn-secondary" id="hero-cta-contact">
-            <i data-lucide="mail" class="btn-icon"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             Hubungi Saya
           </a>
         </div>
 
         <div class="hero-social">
+          <a href="https://github.com/kycjojo" target="_blank" rel="noopener noreferrer" aria-label="GitHub" id="hero-social-github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
           <a href="https://instagram.com/rdj0j_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
             id="hero-social-instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -124,33 +143,47 @@
         <div class="hero-image-container">
           <img src="assets/images/profile/foto-profil.jpg" alt="Foto profil Rochmad Djojo Oktabianto" loading="eager"
             onerror="this.style.display='none'" />
+          <div class="hero-photo-tag">
+            <span class="photo-tag-dot"></span>
+            <span>Verified LKS Competitor</span>
+          </div>
         </div>
 
         <div class="hero-achievements">
-          <div class="hero-achievement-row">
-            <span class="hero-ach-mark">🏅</span>
+          <div class="hero-ach-header">
+            <span class="hero-ach-label">Official Accreditations</span>
+            <span class="hero-ach-sub">WorldSkills Standards</span>
+          </div>
+          <a href="assets/certificates/sertifikat-lks-jatim-mfe.pdf" target="_blank" rel="noopener noreferrer" class="hero-achievement-row">
+            <div class="hero-ach-mark-wrap">
+              <span class="hero-ach-mark">🏅</span>
+            </div>
             <div class="hero-ach-info">
               <div class="hero-ach-title">Medallion for Excellence</div>
-              <div class="hero-ach-event">LKS Provinsi Jawa Timur ke-34 · ITNSA</div>
+              <div class="hero-ach-event">LKS Tingkat Provinsi Jawa Timur ke-34 · No: 400.3/2081/101.3/2026</div>
             </div>
-            <span class="hero-ach-year">APR 2026</span>
-          </div>
-          <div class="hero-achievement-row">
-            <span class="hero-ach-mark">🥇</span>
+            <span class="hero-ach-year">2026</span>
+          </a>
+          <a href="assets/certificates/sertifikat-lks-kabupaten.pdf" target="_blank" rel="noopener noreferrer" class="hero-achievement-row">
+            <div class="hero-ach-mark-wrap">
+              <span class="hero-ach-mark">🥇</span>
+            </div>
             <div class="hero-ach-info">
               <div class="hero-ach-title">Juara 1 — 1st Place</div>
-              <div class="hero-ach-event">LKS Kabupaten Jombang · ITNSA</div>
+              <div class="hero-ach-event">LKS Tingkat Kab. Jombang · No: 400.3/301/106.6.26/2026</div>
             </div>
-            <span class="hero-ach-year">FEB 2026</span>
-          </div>
-          <div class="hero-achievement-row">
-            <span class="hero-ach-mark">🥉</span>
+            <span class="hero-ach-year">2026</span>
+          </a>
+          <a href="assets/certificates/sertifikat-wowskills.pdf" target="_blank" rel="noopener noreferrer" class="hero-achievement-row">
+            <div class="hero-ach-mark-wrap">
+              <span class="hero-ach-mark">🥉</span>
+            </div>
             <div class="hero-ach-info">
-              <div class="hero-ach-title">Juara 3 — Bronze</div>
-              <div class="hero-ach-event">WOW Skills Jawa Timur · ITNSA</div>
+              <div class="hero-ach-title">Juara 3 — Bronze Medal</div>
+              <div class="hero-ach-event">WOW Skills Jatim · SMK Telkom Malang</div>
             </div>
-            <span class="hero-ach-year">JAN 2026</span>
-          </div>
+            <span class="hero-ach-year">2026</span>
+          </a>
         </div>
       </div>
     </div>
