@@ -1,804 +1,968 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Rochmad Djojo Oktabianto | Backend &amp; Automation Developer</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2309090b'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='14' fill='%2338bdf8'>RD</text></svg>" />
-
-  <!-- Fonts (Montserrat & Plus Jakarta Sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            heading: ['Montserrat', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            dark: {
-              950: '#060608',
-              900: '#09090b',
-              850: '#101015',
-              800: '#18181b',
-              700: '#27272a',
-            },
-            brand: {
-              cyan: '#38bdf8',
-              indigo: '#6366f1',
-              emerald: '#10b981',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Meta Tags -->
-  <meta name="title" content="Rochmad Djojo Oktabianto | Backend &amp; Automation Developer" />
-  <meta name="description" content="Mahasiswa D4 Teknik Informatika PENS &amp; ITNSA Medalist. Berfokus pada pengembangan sistem bot 24/7, high-throughput API, dan administrasi server Linux." />
-  <meta name="author" content="Rochmad Djojo Oktabianto" />
-  <link rel="canonical" href="https://portojojoit.vercel.app/" />
-
-  <style>
-    body {
-      background-color: #09090b;
-      color: #f4f4f5;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .gradient-text {
-      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .gradient-border {
-      position: relative;
-    }
-    .gradient-border::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(56,189,248,0.3), rgba(99,102,241,0.1), rgba(255,255,255,0.05));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-    .glass-card {
-      background: rgba(18, 18, 24, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-    }
-    .glass-nav {
-      background: rgba(9, 9, 11, 0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    ::selection {
-      background: #38bdf8;
-      color: #09090b;
-    }
-    .split-card {
-      --split: 50%;
-    }
-    .split-overlay {
-      clip-path: polygon(0 0, var(--split, 50%) 0, var(--split, 50%) 100%, 0 100%);
-      transition: clip-path 0.04s ease-out;
-    }
-    .split-divider {
-      left: var(--split, 50%);
-      transition: left 0.04s ease-out;
-    }
-  </style>
-</head>
-
-<body class="bg-dark-900 text-zinc-100 antialiased selection:bg-brand-cyan selection:text-black">
-
-  <!-- Ambient Light Orbs -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-cyan/10 blur-[140px] pointer-events-none rounded-full -z-10"></div>
-  <div class="fixed top-96 right-0 w-[500px] h-[400px] bg-brand-indigo/10 blur-[160px] pointer-events-none rounded-full -z-10"></div>
-
-  <!-- FLOATING NAVBAR (Aiman Style) -->
-  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
-    <nav class="glass-nav rounded-full px-5 py-2.5 flex items-center justify-between gap-6 shadow-2xl shadow-black/60 max-w-3xl w-full">
-      <!-- Brand Logo -->
-      <a href="#hero" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-cyan to-brand-indigo flex items-center justify-center font-heading font-black text-xs text-white shadow-lg shadow-brand-cyan/20 group-hover:scale-105 transition-transform">
-          RD
-        </div>
-        <div class="flex flex-col">
-          <span class="font-heading font-bold text-sm tracking-tight text-white group-hover:text-brand-cyan transition-colors">Rochmad Djojo</span>
-          <span class="text-[10px] text-zinc-400 font-mono -mt-1">@kycjojo</span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav Items -->
-      <div class="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
-        <a href="#about" class="hover:text-white transition-colors">Tentang</a>
-        <a href="#projects" class="hover:text-white transition-colors">Proyek</a>
-        <a href="#skills" class="hover:text-white transition-colors">Keahlian</a>
-        <a href="#achievements" class="hover:text-white transition-colors">Prestasi</a>
-        <a href="#education" class="hover:text-white transition-colors">Pendidikan</a>
-      </div>
-
-      <!-- Action Button -->
-      <div class="flex items-center gap-2">
-        <a href="https://t.me/Jojonewbie" target="_blank" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white text-zinc-950 hover:bg-zinc-200 transition-all hover:scale-105 shadow-md">
-          <i data-lucide="send" class="w-3.5 h-3.5"></i>
-          <span>Kontak</span>
-        </a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- MAIN CONTAINER -->
-  <main class="max-w-5xl mx-auto px-5 pt-32 pb-24 space-y-24">
-
-    <!-- HERO SECTION -->
-    <section id="hero" class="pt-6 md:pt-12 space-y-8">
-      
-      <!-- Status Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs text-zinc-300">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-        </span>
-        <span class="font-medium text-emerald-400">Available for Projects</span>
-        <span class="text-zinc-600">•</span>
-        <span class="text-zinc-400">D4 Teknik Informatika PENS</span>
-      </div>
-
-      <!-- Hero Headline & Bio -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7 space-y-5">
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-tight leading-[1.1]">
-            Membangun Sistem <br />
-            <span class="gradient-text">Otomatisasi &amp; Server</span> <br />
+<html class="dark" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Rochmad Djojo Oktabianto (@kycjojo) | Automation Engineer &amp; Systems Specialist</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;background-color:#09090b;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+/* Swiss Technical Hairline Grid */
+.swiss-grid {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.mono-card {
+  background: #111113;
+  border: 1px solid #27272a;
+}
+.mono-card-subtle {
+  background: #0e0e11;
+  border: 1px solid #1f1f23;
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-base":"#09090b","surface-card":"#121215","surface-raised":"#18181b","surface-bright":"#27272a","text-primary":"#ffffff","text-secondary":"#a1a1aa","text-muted":"#71717a","border-subtle":"#27272a","border-hairline":"#1f1f23"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.375rem","2xl":"0.5rem","full":"9999px"},"fontFamily":{"sans":["Geist","-apple-system","BlinkMacSystemFont","sans-serif"],"mono":["JetBrains Mono","monospace"],"display-hero":["Geist","sans-serif"],"headline-xl":["Geist","sans-serif"],"headline-lg":["Geist","sans-serif"],"headline-md":["Geist","sans-serif"],"body-lg":["Geist","sans-serif"],"body-md":["Geist","sans-serif"],"body-sm":["Geist","sans-serif"],"label-telemetry":["JetBrains Mono","monospace"],"code-inline":["JetBrains Mono","monospace"],"metric-stat":["JetBrains Mono","monospace"]}}}}</script></head><body class="bg-surface-base swiss-grid font-sans text-text-secondary antialiased selection:bg-white selection:text-black min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/90 backdrop-blur-md border-b border-zinc-800"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-6"><a class="group flex items-center gap-3" data-path="overview" href="#"><div class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-700 flex items-center justify-center transition-all group-hover:border-white"><span class="font-mono text-xs font-bold text-white">RD</span></div><div class="flex flex-col"><span class="font-mono text-xs font-semibold tracking-tight text-white leading-none group-hover:text-zinc-300 transition-colors">RD <span class="text-zinc-600 font-normal">/</span> kycjojo</span><span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mt-1">D4 IT PENS • Systems</span></div></a><div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-sm bg-zinc-900 border border-zinc-800"><span class="relative flex h-1.5 w-1.5"><span class="inline-flex rounded-full h-1.5 w-1.5 bg-white"></span></span><span class="font-mono text-[11px] text-zinc-300 font-medium tracking-wider uppercase">[AVAILABLE FOR PROJECTS]</span></div></div><nav class="hidden lg:flex items-center gap-1 font-mono text-xs" data-active-classes="bg-zinc-800 text-white font-medium rounded-sm"><a aria-current="page" class="px-3 py-1.5 transition-all bg-zinc-800 text-white border border-zinc-700 font-medium rounded-sm" data-path="overview" href="#overview">Tentang</a><a class="px-3 py-1.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-sm transition-colors" data-path="proyek" href="#proyek">Proyek</a><a class="px-3 py-1.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-sm transition-colors" data-path="keahlian" href="#keahlian">Keahlian</a><a class="px-3 py-1.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-sm transition-colors" data-path="prestasi" href="#prestasi">Prestasi</a><a class="px-3 py-1.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-sm transition-colors" data-path="pendidikan" href="#pendidikan">Pendidikan</a></nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-white text-black font-mono text-xs font-semibold tracking-wide hover:bg-zinc-200 transition-all active:scale-95" data-path="kontak" href="#kontak"><span class="material-symbols-outlined text-[15px]">send</span><span>Kontak / Telegram</span></a><div class="w-8 h-8 rounded-sm bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-zinc-400 text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-transparent flex-1"><div class="flex flex-col w-full text-zinc-400">
+<div class="relative w-full max-w-7xl mx-auto px-6 lg:px-12">
+<!-- HERO SECTION -->
+<section class="relative pt-10 pb-14 lg:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Left Column: Introduction & Primary Pitch -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Availability Tag -->
+<div class="inline-flex items-center gap-2 self-start px-2.5 py-1 rounded-sm bg-zinc-900 border border-zinc-800">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+<span class="font-mono text-[11px] text-zinc-300 uppercase tracking-widest">
+              STATUS: AVAILABLE • D4 TEKNIK INFORMATIKA PENS '26
+            </span>
+</div>
+<!-- Main Impact Headline -->
+<h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08] font-bold">
+            Membangun Sistem <br/>
+<span class="text-zinc-400 font-normal">Otomatisasi &amp; Server</span> <br/>
             yang Tangguh.
           </h1>
-
-          <p class="text-base sm:text-lg text-zinc-400 max-w-2xl leading-relaxed font-normal">
-            Halo, aku <strong class="text-zinc-200 font-semibold">Rochmad Djojo Oktabianto</strong>. Pengembang bot dan sistem berbasis <strong class="text-zinc-200 font-semibold">Python &amp; Linux</strong> dengan latar belakang kompetisi ITNSA. Berfokus pada arsitektur bot 24/7, high-throughput parallel API, dan stabilitas operasional.
+<!-- Bio Pitch -->
+<p class="text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed font-normal">
+            Halo, aku <strong class="text-white font-semibold">Rochmad Djojo Oktabianto</strong>. Pengembang bot dan sistem berbasis <strong class="text-white font-mono font-medium underline underline-offset-4 decoration-zinc-600">Python &amp; Linux</strong> dengan latar belakang kompetisi ITNSA. Berfokus pada arsitektur bot 24/7, high-throughput parallel API, dan stabilitas operasional.
           </p>
+<!-- Action Hub -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-white text-black font-mono font-semibold text-xs tracking-wide hover:bg-zinc-200 transition-all active:scale-95" href="#proyek"><span class="material-symbols-outlined text-[16px]">terminal</span><span>Jelajahi Proyek</span></a>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-white font-mono text-xs font-medium transition-all active:scale-95 hover:bg-zinc-800" href="https://github.com/kycjojo" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-zinc-400">code</span>
+<span>GitHub</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white font-mono text-xs font-medium transition-all hover:bg-zinc-800" href="https://t.me/jojoethol_bot" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+<span class="font-mono text-xs">@jojoethol_bot</span>
+</a>
+</div>
+<!-- Dual Speciality Monospace Pill Indicator -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-zinc-900/90 border border-zinc-800 self-start mt-1">
+<span class="font-mono text-xs text-zinc-500">MATRIX:</span>
+<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 font-mono text-xs text-white font-medium">[SYSADMIN 50%]</span>
+<span class="font-mono text-xs text-zinc-600">/</span>
+<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 font-mono text-xs text-white font-medium">[DEVELOPER 50%]</span>
+</div>
+</div>
+<!-- Right Column: Interactive Dual Specialty Split Card -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-sm mono-card p-3 group border border-zinc-800 hover:border-zinc-700 transition-colors">
+<!-- Split Visual Cards Container -->
+<div class="grid grid-cols-2 gap-2 h-96 relative rounded-sm overflow-hidden">
+<!-- Left Split: SysAdmin Side -->
+<div class="relative bg-zinc-950 p-4 flex flex-col justify-between overflow-hidden border border-zinc-800 rounded-sm">
+<div class="absolute inset-0 bg-cover bg-center opacity-35 grayscale group-hover:opacity-55 transition-opacity duration-500 group-hover:scale-105 transition-transform duration-700" data-alt="Technical network server rack closet with illuminated indicator lights and organized patch cables representing IT network engineering." style="background-image: url('assets/images/profile/formal-smk.jpg')"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-zinc-800 text-white border border-zinc-700 font-mono text-[10px] uppercase font-semibold tracking-wider mb-2">
+<span class="material-symbols-outlined text-[12px]">dns</span>
+<span>SysAdmin</span>
+</div>
+<h3 class="font-mono text-base text-white font-semibold tracking-tight">Network Specialist</h3>
+</div>
+<div class="relative z-10 flex flex-col gap-1 text-[11px] font-mono bg-zinc-900/90 p-2.5 rounded-sm border border-zinc-800">
+<span class="text-white font-medium">SMK TKJ • ITNSA</span>
+<span class="text-zinc-300">LKS Jatim Medalist</span>
+<span class="text-zinc-500 text-[10px]">Linux • Cisco • MikroTik</span>
+</div>
+</div>
+<!-- Right Split: Developer Side -->
+<div class="relative bg-zinc-950 p-4 flex flex-col justify-between overflow-hidden border border-zinc-800 rounded-sm">
+<div class="absolute inset-0 bg-cover bg-center opacity-35 grayscale group-hover:opacity-55 transition-opacity duration-500 group-hover:scale-105 transition-transform duration-700" data-alt="Monochrome close up portrait of a young Indonesian software engineer with code editor terminal reflection in glasses in a modern dark tech lab." style="background-image: url('assets/images/profile/foto-profil.jpg')"></div>
+<div class="relative z-10 flex flex-col items-end text-right">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-zinc-800 text-white border border-zinc-700 font-mono text-[10px] uppercase font-semibold tracking-wider mb-2">
+<span>&lt;Coder&gt;</span>
+<span class="material-symbols-outlined text-[12px]">code</span>
+</div>
+<h3 class="font-mono text-base text-white font-semibold tracking-tight">Software &amp; Bot Dev</h3>
+</div>
+<div class="relative z-10 flex flex-col gap-1 text-[11px] font-mono bg-zinc-900/90 p-2.5 rounded-sm border border-zinc-800 text-right">
+<span class="text-white font-medium">D4 IT PENS '26</span>
+<span class="text-zinc-300">Automation Engineer</span>
+<span class="text-zinc-500 text-[10px]">Python • High Avail • C</span>
+</div>
+</div>
+</div>
+<!-- Card Bottom Bar Controller -->
+<div class="mt-2.5 px-3 py-2 rounded-sm bg-zinc-900 border border-zinc-800 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+<span class="font-mono text-[11px] text-zinc-400 uppercase tracking-wider">DUALITY_SYNCHRONIZED</span>
+</div>
+<div class="flex items-center gap-1.5 font-mono text-[10px]">
+<span class="text-zinc-300 px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700">SysAdmin</span>
+<span class="text-white font-semibold px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700">50:50</span>
+<span class="text-zinc-300 px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700">Developer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE LINUX TERMINAL SIMULATOR WIDGET (SWISS TECHNICAL MONOCHROME) -->
+<div class="mt-8 w-full rounded-sm mono-card border border-zinc-800 overflow-hidden transition-all duration-300">
+<!-- Terminal Titlebar -->
+<div class="px-4 py-2.5 bg-zinc-950 border-b border-zinc-800 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<!-- Minimal monochrome dots -->
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block border border-zinc-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block border border-zinc-600"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-zinc-700 inline-block border border-zinc-600"></span>
+</div>
+<!-- Title text -->
+<div class="flex items-center gap-2 text-zinc-500 font-mono text-xs">
+<span class="material-symbols-outlined text-[14px] text-zinc-400">terminal</span>
+<span class="text-zinc-200 font-medium">kycjojo@node-01: ~</span>
+<span class="text-zinc-500 hidden sm:inline">(zsh / fish)</span>
+<span class="text-zinc-500 hidden md:inline">• latency: <span class="text-zinc-300 font-mono">~0.4s</span></span>
+<span class="text-zinc-500 hidden md:inline">• uptime: <span class="text-zinc-300 font-mono">24/7</span></span>
+</div>
+</div>
+<!-- Status pill, Audio toggle & clear button -->
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 font-mono text-[11px] font-medium transition-all cursor-pointer active:scale-95" id="terminal-audio-toggle" onclick="toggleAudio()" title="Nyalakan/Matikan Efek Suara Web Audio API">
+<span class="material-symbols-outlined text-[13px]" id="audio-icon">volume_up</span>
+<span id="audio-label">AUDIO ON</span>
+</button>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-700 text-zinc-200 font-mono text-[10px] uppercase font-bold tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+        ONLINE
+      </span>
+<button class="px-2.5 py-1 rounded-sm bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white font-mono text-[11px] border border-zinc-800 transition-colors uppercase" onclick="clearTerminalScreen()" title="Clear screen">
+        clear
+      </button>
+</div>
+</div>
+<!-- Quick Command Chips Bar -->
+<div class="px-4 py-2 bg-zinc-900 border-b border-zinc-800 flex items-center gap-2 overflow-x-auto text-xs font-mono">
+<span class="text-zinc-500 shrink-0 text-[11px] flex items-center gap-1 uppercase tracking-wider">
+<span class="material-symbols-outlined text-[13px] text-zinc-400">play_arrow</span> EXEC:
+    </span>
+<button class="px-2.5 py-0.5 rounded-sm bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shrink-0 active:scale-95 border border-zinc-800 font-mono text-[11px]" onclick="runCommand('whoami')">
+      whoami
+    </button>
+<button class="px-2.5 py-0.5 rounded-sm bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shrink-0 active:scale-95 border border-zinc-800 font-mono text-[11px]" onclick="runCommand('systemctl status ethol-assist')">
+      systemctl status
+    </button>
+<button class="px-2.5 py-0.5 rounded-sm bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shrink-0 active:scale-95 border border-zinc-800 font-mono text-[11px]" onclick="runCommand('fastfetch --minimal')">
+      fastfetch
+    </button>
+<button class="px-2.5 py-0.5 rounded-sm bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shrink-0 active:scale-95 border border-zinc-800 font-mono text-[11px]" onclick="runCommand('cat /etc/skills.conf')">
+      skills.conf
+    </button>
+<button class="px-2.5 py-0.5 rounded-sm bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shrink-0 active:scale-95 border border-zinc-800 font-mono text-[11px]" onclick="runCommand('projects')">
+      projects
+    </button>
+<button class="px-2.5 py-0.5 rounded-sm bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all shrink-0 active:scale-95 border border-zinc-800 font-mono text-[11px]" onclick="runCommand('ping')">
+      ping pens.ac.id
+    </button>
+<button class="px-2.5 py-0.5 rounded-sm bg-white hover:bg-zinc-200 text-black transition-all shrink-0 active:scale-95 font-mono text-[11px] font-semibold" onclick="runCommand('help')">
+      help
+    </button>
+</div>
+<!-- Terminal Body: Log Output & Interactive Input -->
+<div class="p-4 lg:p-5 font-mono text-xs sm:text-sm text-zinc-200 max-h-[360px] min-h-[220px] overflow-y-auto space-y-2 selection:bg-white selection:text-black bg-black" id="terminal-body">
+<!-- Log entries will be rendered here by script -->
+<div class="space-y-2.5" id="terminal-history"><div class="space-y-1.5">
+<div class="flex items-center gap-2 font-mono text-xs sm:text-sm">
+<span class="text-zinc-400 font-semibold">kycjojo@pens</span><span class="text-zinc-600">:</span><span class="text-white font-bold">~</span><span class="text-zinc-500">$</span>
+<span class="text-white font-medium">whoami</span>
+</div>
+<div class="text-xs sm:text-sm pl-2"><div class="text-zinc-300 pl-3 border-l border-zinc-700">
+<div class="text-white font-semibold">Rochmad Djojo Oktabianto (@kycjojo)</div>
+<div class="text-zinc-300">Automation Engineer &amp; Systems Specialist (D4 IT PENS '26)</div>
+<div class="text-zinc-500 text-xs">Ex-LKS Jatim Medalist (ITNSA) • Bot Architect • Linux Server Admin</div>
+</div></div>
+</div><div class="space-y-1.5">
+<div class="flex items-center gap-2 font-mono text-xs sm:text-sm">
+<span class="text-zinc-400 font-semibold">kycjojo@pens</span><span class="text-zinc-600">:</span><span class="text-white font-bold">~</span><span class="text-zinc-500">$</span>
+<span class="text-white font-medium">systemctl status ethol-assist</span>
+</div>
+<div class="text-xs sm:text-sm pl-2"><div class="text-zinc-300 pl-3 border-l border-zinc-700 font-mono text-xs">
+<div>● <span class="text-white font-bold">ethol-assist.service</span> - High-Availability Multi-Device Termux Bot</div>
+<div class="text-zinc-500">   Loaded: loaded (/etc/systemd/system/ethol-assist.service; enabled)</div>
+<div>   Active: <span class="text-white font-semibold">active (running)</span> since Thu 2025-01-02 00:00:01 UTC</div>
+<div>   Topology: <span class="text-zinc-300 font-semibold">Active-Standby (Termux Android Host)</span> | HTTP 409 Auto-Standdown</div>
+<div>   Latency: <span class="text-white font-semibold">~0.38s non-blocking</span> | HMAC-SHA256 Token Signature</div>
+</div></div>
+</div></div>
+<!-- Active Input Line -->
+<form class="flex items-center gap-2 pt-1 font-mono text-xs sm:text-sm" id="terminal-form" onsubmit="handleTerminalSubmit(event)">
+<span class="text-zinc-400 font-semibold shrink-0">kycjojo@pens</span>
+<span class="text-zinc-600 shrink-0">:</span>
+<span class="text-white font-bold shrink-0">~</span>
+<span class="text-zinc-500 shrink-0">$</span>
+<input autocomplete="off" class="flex-1 bg-transparent border-0 outline-none p-0 text-white focus:ring-0 placeholder:text-zinc-600 font-mono text-xs sm:text-sm caret-white" id="terminal-input" placeholder="type 'help', 'about', 'skills'..." spellcheck="false" type="text"/>
+</form>
+</div>
+<!-- Terminal Footer Hint -->
+<div class="px-4 py-2 bg-zinc-950 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-zinc-500">
+<div class="flex items-center gap-2">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-white"></span>
+<span>Ketik perintah di atas &amp; tekan Enter. Coba: <code class="text-zinc-300 font-semibold">help</code>, <code class="text-zinc-300 font-semibold">whoami</code>, <code class="text-zinc-300 font-semibold">projects</code>, <code class="text-zinc-300 font-semibold">clear</code></span>
+</div>
+<span class="text-zinc-600">Node: PENS-DTIK-SYS-01 • Shell: zsh 5.9</span>
+</div>
+</div>
+<script>
+  const terminalHistory = document.getElementById('terminal-history');
+  const terminalInput = document.getElementById('terminal-input');
+  const terminalBody = document.getElementById('terminal-body');
 
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-brand-cyan to-brand-indigo text-white hover:opacity-90 shadow-lg shadow-brand-cyan/20 transition-all hover:-translate-y-0.5">
-              <i data-lucide="layers" class="w-4 h-4"></i>
-              <span>Jelajahi Proyek</span>
-            </a>
+  // --- Web Audio API Synthetic Sound Engine ---
+  let audioCtx = null;
+  let audioEnabled = true;
 
-            <a href="https://github.com/kycjojo" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm glass-card text-zinc-300 hover:text-white hover:bg-zinc-800/60 transition-all hover:-translate-y-0.5">
-              <i data-lucide="github" class="w-4 h-4"></i>
-              <span>GitHub</span>
-            </a>
+  function initAudioContext() {
+    if (!audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) {
+        audioCtx = new AudioContextClass();
+      }
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
 
-            <a href="https://t.me/jojoethol_bot" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm glass-card text-sky-400 hover:bg-sky-500/10 border-sky-500/20 transition-all hover:-translate-y-0.5">
-              <i data-lucide="bot" class="w-4 h-4"></i>
-              <span>@jojoethol_bot</span>
-            </a>
-          </div>
-        </div>
+  function toggleAudio() {
+    initAudioContext();
+    audioEnabled = !audioEnabled;
+    const btn = document.getElementById('terminal-audio-toggle');
+    const icon = document.getElementById('audio-icon');
+    const label = document.getElementById('audio-label');
 
-        <!-- DUAL IDENTITY SPLIT HERO CARD (Adham Dannaway Concept) -->
-        <div class="lg:col-span-5 flex flex-col items-center lg:items-end space-y-3">
-          <div class="relative group">
-            <!-- Ambient Glow -->
-            <div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-amber-500/25 via-brand-cyan/25 to-brand-indigo/30 opacity-40 blur-xl group-hover:opacity-60 transition-opacity"></div>
-            
-            <!-- Split Container -->
-            <div id="splitCard" class="split-card relative w-[300px] sm:w-[340px] h-[400px] rounded-3xl overflow-hidden glass-card border border-white/10 shadow-2xl select-none cursor-ew-resize">
-              
-              <!-- BASE LAYER: RIGHT SIDE (<Coder / Developer>) -->
-              <div class="absolute inset-0 w-full h-full bg-zinc-950">
-                <img src="assets/images/profile/foto-profil.jpg" alt="Rochmad Djojo - Developer" class="w-full h-full object-cover object-top" onerror="this.src='assets/images/profile/pens-almamater.jpg'" />
-                <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/30 to-transparent"></div>
-                
-                <!-- Right Label / Badges -->
-                <div class="absolute top-4 right-4 text-right pointer-events-none">
-                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30 backdrop-blur-md">
-                    <i data-lucide="code" class="w-3 h-3"></i>
-                    <span>&lt;Coder&gt;</span>
-                  </span>
-                  <div class="text-[11px] text-zinc-300 font-mono mt-1 font-semibold">Software &amp; Bot Dev</div>
-                </div>
+    if (audioEnabled) {
+      btn.className = "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 font-mono text-[11px] font-medium transition-all cursor-pointer active:scale-95";
+      icon.textContent = "volume_up";
+      label.textContent = "AUDIO ON";
+      playKeyClickSound();
+    } else {
+      btn.className = "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-zinc-900 hover:bg-zinc-800 text-zinc-500 border border-zinc-800 font-mono text-[11px] font-medium transition-all cursor-pointer active:scale-95";
+      icon.textContent = "volume_off";
+      label.textContent = "MUTED";
+    }
+  }
 
-                <div class="absolute bottom-4 right-4 text-right pointer-events-none">
-                  <div class="text-[10px] font-mono text-brand-cyan/90 font-medium">D4 IT PENS '26</div>
-                  <div class="text-xs font-heading font-bold text-white">Automation Engineer</div>
-                  <div class="text-[10px] text-zinc-400 font-mono">Python • High Availability • C</div>
-                </div>
-              </div>
+  // 1. Mechanical Keyboard Click Sound
+  function playKeyClickSound() {
+    if (!audioEnabled) return;
+    initAudioContext();
+    if (!audioCtx) return;
 
-              <!-- OVERLAY LAYER: LEFT SIDE (SysAdmin / ITNSA) -->
-              <div id="splitLeftOverlay" class="split-overlay absolute inset-0 w-full h-full">
-                <div class="relative w-full h-full bg-zinc-950">
-                  <img src="assets/images/profile/formal-smk.jpg" alt="Rochmad Djojo - SysAdmin" class="w-full h-full object-cover object-top" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/30 to-transparent"></div>
-                  
-                  <!-- Left Label / Badges -->
-                  <div class="absolute top-4 left-4 text-left pointer-events-none">
-                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
-                      <i data-lucide="server" class="w-3 h-3"></i>
-                      <span>SysAdmin</span>
-                    </span>
-                    <div class="text-[11px] text-zinc-300 font-mono mt-1 font-semibold">Network Specialist</div>
-                  </div>
+    try {
+      const t = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const filter = audioCtx.createBiquadFilter();
 
-                  <div class="absolute bottom-4 left-4 text-left pointer-events-none">
-                    <div class="text-[10px] font-mono text-amber-400/90 font-medium">SMK TKJ • ITNSA</div>
-                    <div class="text-xs font-heading font-bold text-white">LKS Jatim Medalist</div>
-                    <div class="text-[10px] text-zinc-400 font-mono">Linux • Cisco • MikroTik</div>
-                  </div>
-                </div>
-              </div>
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(1400 + Math.random() * 800, t);
+      filter.Q.setValueAtTime(2.5, t);
 
-              <!-- DIVIDER BAR & DRAG HANDLE -->
-              <div id="splitDivider" class="split-divider absolute inset-y-0 w-0.5 bg-gradient-to-b from-amber-400 via-white to-brand-cyan shadow-[0_0_12px_rgba(255,255,255,0.9)] pointer-events-none">
-                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 rounded-full glass-card border border-white/50 flex items-center justify-center text-white text-[10px] shadow-lg backdrop-blur-md bg-dark-900/90">
-                  <span class="flex items-center gap-0.5 font-mono text-[9px] text-zinc-200 font-bold">‹›</span>
-                </div>
-              </div>
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(320 + Math.random() * 120, t);
+      osc.frequency.exponentialRampToValueAtTime(70, t + 0.035);
 
-            </div>
-          </div>
+      gain.gain.setValueAtTime(0.045, t);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.035);
 
-          <!-- QUICK SWITCH TOGGLE BUTTONS -->
-          <div class="flex items-center gap-1.5 p-1 rounded-2xl glass-card text-[11px] font-mono text-zinc-400 border border-white/5">
-            <button type="button" onclick="setSplitPosition(85, true)" class="px-2.5 py-1 rounded-xl hover:text-amber-300 hover:bg-white/5 transition-all">
-              SysAdmin
-            </button>
-            <button type="button" onclick="setSplitPosition(50, true)" class="px-2.5 py-1 rounded-xl text-white font-semibold bg-white/10 border border-white/10 hover:bg-white/15 transition-all">
-              Dual 50:50
-            </button>
-            <button type="button" onclick="setSplitPosition(15, true)" class="px-2.5 py-1 rounded-xl hover:text-brand-cyan hover:bg-white/5 transition-all">
-              Developer
-            </button>
-          </div>
-        </div>
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(t);
+      osc.stop(t + 0.04);
+    } catch(e) {}
+  }
+
+  // 2. Command Execution Beep / Telemetry Exec Chime
+  function playCommandExecSound() {
+    if (!audioEnabled) return;
+    initAudioContext();
+    if (!audioCtx) return;
+
+    try {
+      const t = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(880, t);
+      osc.frequency.exponentialRampToValueAtTime(1760, t + 0.09);
+
+      gain.gain.setValueAtTime(0.08, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.12);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(t);
+      osc.stop(t + 0.13);
+    } catch(e) {}
+  }
+
+  // 3. Error Tone
+  function playErrorSound() {
+    if (!audioEnabled) return;
+    initAudioContext();
+    if (!audioCtx) return;
+
+    try {
+      const t = audioCtx.currentTime;
+      [0, 0.08].forEach(offset => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(160, t + offset);
+        osc.frequency.linearRampToValueAtTime(120, t + offset + 0.06);
+
+        gain.gain.setValueAtTime(0.06, t + offset);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + offset + 0.065);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(t + offset);
+        osc.stop(t + offset + 0.07);
+      });
+    } catch(e) {}
+  }
+
+  if (terminalInput) {
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') {
+        playKeyClickSound();
+      }
+    });
+  }
+
+  const COMMAND_RESPONSES = {
+    'whoami': `<div class="text-zinc-300 pl-3 border-l border-zinc-700">
+      <div class="text-white font-semibold">Rochmad Djojo Oktabianto (@kycjojo)</div>
+      <div class="text-zinc-300">Automation Engineer &amp; Systems Specialist (D4 IT PENS '26)</div>
+      <div class="text-zinc-500 text-xs">Ex-LKS Jatim Medalist (ITNSA) • Bot Architect • Linux Server Admin</div>
+    </div>`,
+
+    'systemctl status ethol-assist': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 font-mono text-xs">
+      <div>● <span class="text-white font-bold">ethol-assist.service</span> - High-Availability Multi-Device Termux Bot</div>
+      <div class="text-zinc-500">   Loaded: loaded (/etc/systemd/system/ethol-assist.service; enabled)</div>
+      <div>   Active: <span class="text-white font-semibold">active (running)</span> since Thu 2025-01-02 00:00:01 UTC</div>
+      <div>   Topology: <span class="text-zinc-300 font-semibold">Active-Standby (Termux Android Host)</span> | HTTP 409 Auto-Standdown</div>
+      <div>   Latency: <span class="text-white font-semibold">~0.38s non-blocking</span> | HMAC-SHA256 Token Signature</div>
+    </div>`,
+
+    'fastfetch --minimal': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 font-mono text-xs grid grid-cols-1 sm:grid-cols-2 gap-1 py-1">
+      <div><span class="text-white font-semibold">OS:</span> Linux (Debian 12 / Termux env)</div>
+      <div><span class="text-white font-semibold">Host:</span> PENS Campus Node Gateway</div>
+      <div><span class="text-white font-semibold">Campus:</span> Politeknik Elektronika Negeri Surabaya</div>
+      <div><span class="text-white font-semibold">Dept:</span> D4 Teknik Informatika (DTIK)</div>
+      <div><span class="text-white font-semibold">Languages:</span> Python, C, Bash, JS, SQL</div>
+      <div><span class="text-white font-semibold">Uptime:</span> 24/7 (High-Availability Failover)</div>
+      <div><span class="text-white font-semibold">Honors:</span> LKS Jawa Timur Medallion (ITNSA)</div>
+      <div><span class="text-white font-semibold">Status:</span> <span class="text-white font-bold">[READY FOR PROJECTS]</span></div>
+    </div>`,
+
+    'cat /etc/skills.conf': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 font-mono text-xs">
+      <div class="text-zinc-500"># /etc/skills.conf - Stack &amp; Specialization Matrix</div>
+      <div><span class="text-white font-semibold">[Backend &amp; Bots]</span> Python, AsyncIO, ThreadPoolExecutor, REST API, SQLite, HMAC</div>
+      <div><span class="text-zinc-300 font-semibold">[SysAdmin &amp; Net]</span> Debian/Ubuntu, Cisco IOS Routing, MikroTik, DNS BIND9, Nginx</div>
+      <div><span class="text-zinc-400 font-semibold">[Workflow]</span> Git, GitHub, Linux Bash Scripting, Android ADB, Webhook</div>
+    </div>`,
+
+    'projects': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 space-y-1 text-xs">
+      <div class="font-bold text-white">Karya &amp; Sistem Unggulan:</div>
+      <div>• <a href="https://t.me/jojoethol_bot" target="_blank" class="text-white hover:underline font-semibold">ETHOL Assist (@jojoethol_bot)</a> - Bot presensi otomatis 24/7 &amp; notif tugas PENS (HA failover)</div>
+      <div>• <span class="text-zinc-200 font-semibold">MIS Academic Bot (/cekruang)</span> - Parallel fetcher ruangan kosong latensi ~0.4s</div>
+      <div>• <a href="https://portojojoit.vercel.app" target="_blank" class="text-zinc-300 hover:underline font-semibold">Personal Showcase</a> - portojojoit.vercel.app</div>
+    </div>`,
+
+    'about': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 space-y-1 text-xs">
+      <div class="text-white font-bold">Tentang Rochmad Djojo Oktabianto:</div>
+      <div>Mahasiswa D4 Teknik Informatika PENS '26. Memadukan keahlian administrasi jaringan &amp; server (medalis LKS ITNSA Jatim) dengan rekayasa bot otomatisasi paralel berkinerja tinggi.</div>
+    </div>`,
+
+    'skills': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 text-xs">
+      <div><strong class="text-white">Languages:</strong> Python, C, Bash/Shell, JavaScript, PHP, SQL</div>
+      <div><strong class="text-white">Systems:</strong> Linux Server, Cisco IOS, MikroTik, Nginx, BIND9, Termux</div>
+      <div><strong class="text-white">Engineering:</strong> High-Availability 24/7, ThreadPool, HMAC Security, Webhooks</div>
+    </div>`,
+
+    'contact': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 text-xs space-y-1">
+      <div>• Telegram: <a href="https://t.me/Jojonewbie" target="_blank" class="text-white hover:underline font-medium">@Jojonewbie</a></div>
+      <div>• GitHub: <a href="https://github.com/kycjojo" target="_blank" class="text-zinc-300 hover:underline font-medium">github.com/kycjojo</a></div>
+      <div>• Bot: <a href="https://t.me/jojoethol_bot" target="_blank" class="text-white hover:underline font-medium">@jojoethol_bot</a></div>
+      <div>• Email: <span class="text-zinc-200">jojookta@it.student.pens.ac.id</span></div>
+    </div>`,
+
+    'ping': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 font-mono text-xs space-y-0.5">
+      <div>PING pens.ac.id (103.10.60.2): 56 data bytes</div>
+      <div>64 bytes from 103.10.60.2: icmp_seq=1 ttl=64 time=0.38 ms</div>
+      <div>64 bytes from 103.10.60.2: icmp_seq=2 ttl=64 time=0.42 ms</div>
+      <div>64 bytes from 103.10.60.2: icmp_seq=3 ttl=64 time=0.39 ms</div>
+      <div class="text-white font-semibold">--- pens.ac.id ping statistics: 3 packets transmitted, 3 received, 0% packet loss, min/avg/max = 0.38/0.40/0.42 ms</div>
+    </div>`,
+
+    'help': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 text-xs space-y-1 font-mono">
+      <div class="font-bold text-white">Perintah yang tersedia:</div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 pt-1">
+        <div><code class="text-white font-bold">whoami</code> - Profil developer</div>
+        <div><code class="text-white font-bold">systemctl status</code> - Cek bot service</div>
+        <div><code class="text-white font-bold">projects</code> - Daftar proyek</div>
+        <div><code class="text-white font-bold">skills</code> - Tech stack</div>
+        <div><code class="text-white font-bold">fastfetch</code> - Spek sistem</div>
+        <div><code class="text-white font-bold">ping</code> - Tes latensi</div>
+        <div><code class="text-white font-bold">contact</code> - Info kontak</div>
+        <div><code class="text-white font-bold">clear</code> - Bersihkan layar</div>
       </div>
+    </div>`
+  };
 
-      <!-- Quick Metrics Bento Bar -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4">
-        <div class="glass-card p-4 rounded-2xl space-y-1">
-          <div class="text-2xl font-heading font-extrabold text-white">24/7</div>
-          <div class="text-xs text-zinc-400 font-medium">Uptime Presensi Otomatis</div>
-        </div>
-        <div class="glass-card p-4 rounded-2xl space-y-1">
-          <div class="text-2xl font-heading font-extrabold text-brand-cyan">~0.4s</div>
-          <div class="text-xs text-zinc-400 font-medium">Latensi Multi-API Non-Blocking</div>
-        </div>
-        <div class="glass-card p-4 rounded-2xl space-y-1">
-          <div class="text-2xl font-heading font-extrabold text-amber-400">Medallion</div>
-          <div class="text-xs text-zinc-400 font-medium">LKS Jawa Timur ke-34 (ITNSA)</div>
-        </div>
-        <div class="glass-card p-4 rounded-2xl space-y-1">
-          <div class="text-2xl font-heading font-extrabold text-emerald-400">100%</div>
-          <div class="text-xs text-zinc-400 font-medium">Real Running Systems</div>
-        </div>
+  function appendTerminalEntry(cmd, responseHtml) {
+    const entry = document.createElement('div');
+    entry.className = 'space-y-1.5';
+    entry.innerHTML = `
+      <div class="flex items-center gap-2 font-mono text-xs sm:text-sm">
+        <span class="text-zinc-400 font-semibold">kycjojo@pens</span><span class="text-zinc-600">:</span><span class="text-white font-bold">~</span><span class="text-zinc-500">$</span>
+        <span class="text-white font-medium">${cmd}</span>
       </div>
-    </section>
+      ${responseHtml ? `<div class="text-xs sm:text-sm pl-2">${responseHtml}</div>` : ''}
+    `;
+    terminalHistory.appendChild(entry);
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="space-y-6">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
-        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan font-semibold">Tentang Saya &amp; Perjalanan</h2>
-      </div>
+  function clearTerminalScreen() {
+    playKeyClickSound();
+    terminalHistory.innerHTML = '';
+    terminalBody.scrollTop = 0;
+    if (terminalInput) terminalInput.focus();
+  }
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-        
-        <!-- Story Card -->
-        <div class="lg:col-span-7 glass-card p-6 md:p-8 rounded-3xl space-y-5 text-zinc-300 text-sm md:text-base leading-relaxed flex flex-col justify-between">
-          <div class="space-y-4">
-            <h3 class="text-xl sm:text-2xl font-heading font-bold text-white">
-              Dari Infrastruktur Jaringan Menuju Rekayasa Sistem Cerdas
-            </h3>
-            <p>
-              Aku adalah mahasiswa aktif <span class="text-white font-medium">D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS)</span>. Perjalananku berakar kuat dari kompetisi <span class="text-white font-medium">IT Network System Administration (ITNSA)</span>, membekaliku dengan pemahaman mendalam tentang administrasi Linux Server, konfigurasi perangkat jaringan fisik (Cisco &amp; MikroTik), dan pemecahan masalah sistematis.
+  function runCommand(rawCmd, isFromBoot = false) {
+    const cleanCmd = rawCmd.trim().toLowerCase();
+    let response = '';
+    let isError = false;
+
+    if (cleanCmd === 'clear') {
+      clearTerminalScreen();
+      return;
+    }
+
+    if (COMMAND_RESPONSES[cleanCmd]) {
+      response = COMMAND_RESPONSES[cleanCmd];
+    } else if (cleanCmd.startsWith('systemctl status')) {
+      response = COMMAND_RESPONSES['systemctl status ethol-assist'];
+    } else if (cleanCmd.startsWith('fastfetch')) {
+      response = COMMAND_RESPONSES['fastfetch --minimal'];
+    } else if (cleanCmd.startsWith('cat')) {
+      response = COMMAND_RESPONSES['cat /etc/skills.conf'];
+    } else if (cleanCmd === '') {
+      appendTerminalEntry('', '');
+      return;
+    } else {
+      isError = true;
+      response = `<div class="text-zinc-400 pl-3 border-l border-zinc-600 font-mono text-xs">
+        zsh: command not found: <span class="font-bold text-white">${escapeHtml(rawCmd)}</span>. Ketik <span class="text-white underline cursor-pointer" onclick="runCommand('help')">help</span> untuk daftar perintah.
+      </div>`;
+    }
+
+    if (!isFromBoot) {
+      if (isError) {
+        playErrorSound();
+      } else {
+        playCommandExecSound();
+      }
+    }
+
+    appendTerminalEntry(rawCmd, response);
+  }
+
+  function handleTerminalSubmit(e) {
+    e.preventDefault();
+    const val = terminalInput.value;
+    if (val !== undefined) {
+      runCommand(val);
+      terminalInput.value = '';
+    }
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.innerText = text;
+    return div.innerHTML;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const bootSequence = [
+      { cmd: 'whoami', delay: 400 },
+      { cmd: 'systemctl status ethol-assist', delay: 1100 }
+    ];
+
+    bootSequence.forEach(item => {
+      setTimeout(() => {
+        runCommand(item.cmd, true);
+      }, item.delay);
+    });
+  });
+</script>
+<!-- METRICS & TELEMETRY STRIP -->
+<div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
+<!-- Metric 1 -->
+<div class="p-4 rounded-sm mono-card flex flex-col justify-between group hover:border-zinc-600 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[AVAILABILITY]</span>
+<span class="material-symbols-outlined text-zinc-400 text-[16px]">verified</span>
+</div>
+<div class="my-2">
+<span class="font-mono text-2xl sm:text-3xl font-bold text-white">24/7</span>
+</div>
+<span class="font-mono text-[11px] text-zinc-400">Uptime Presensi Otomatis</span>
+</div>
+<!-- Metric 2 -->
+<div class="p-4 rounded-sm mono-card flex flex-col justify-between group hover:border-zinc-600 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[THROUGHPUT]</span>
+<span class="material-symbols-outlined text-zinc-400 text-[16px]">speed</span>
+</div>
+<div class="my-2">
+<span class="font-mono text-2xl sm:text-3xl font-bold text-white">~0.4s</span>
+</div>
+<span class="font-mono text-[11px] text-zinc-400">Latensi Multi-API Non-Blocking</span>
+</div>
+<!-- Metric 3 -->
+<div class="p-4 rounded-sm mono-card flex flex-col justify-between group hover:border-zinc-600 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[HONORS]</span>
+<span class="material-symbols-outlined text-zinc-400 text-[16px]">military_tech</span>
+</div>
+<div class="my-2">
+<span class="font-mono text-2xl sm:text-3xl font-bold text-white">Medallion</span>
+</div>
+<span class="font-mono text-[11px] text-zinc-400">LKS Jawa Timur ke-34 (ITNSA)</span>
+</div>
+<!-- Metric 4 -->
+<div class="p-4 rounded-sm mono-card flex flex-col justify-between group hover:border-zinc-600 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PRODUCTION]</span>
+<span class="material-symbols-outlined text-zinc-400 text-[16px]">check_circle</span>
+</div>
+<div class="my-2">
+<span class="font-mono text-2xl sm:text-3xl font-bold text-white">100%</span>
+</div>
+<span class="font-mono text-[11px] text-zinc-400">Real Running Systems</span>
+</div>
+</div>
+</section>
+<!-- SECTION: TENTANG SAYA & PERJALANAN -->
+<section class="py-14 border-t border-zinc-800" id="overview">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1.5 w-1.5 rounded-full bg-white"></span>
+<span class="font-mono text-[11px] text-zinc-400 uppercase tracking-widest">TENTANG SAYA &amp; PERJALANAN</span>
+</div>
+<h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl text-white max-w-2xl font-bold tracking-tight mb-8">
+        Dari Infrastruktur Jaringan Menuju Rekayasa Sistem Cerdas
+      </h2>
+<!-- Bento Grid Story Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+<!-- Left: Narrative & Milestones -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="p-6 lg:p-7 rounded-sm mono-card flex flex-col gap-4">
+<p class="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+              Aku adalah mahasiswa aktif <strong class="text-white font-medium">D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS)</strong>. Perjalananku berakar kuat dari kompetisi <strong class="text-white font-mono font-medium">IT Network System Administration (ITNSA)</strong>, membekaliku dengan pemahaman mendalam tentang administrasi Linux Server, konfigurasi perangkat jaringan fisik (Cisco &amp; MikroTik), dan pemecahan masalah sistematis.
             </p>
-            <p>
-              Di PENS, fokusku berkembang ke rekayasa perangkat lunak backend dan otomatisasi alur kerja: merancang sistem bot cerdas yang dapat beroperasi 24 jam penuh tanpa henti, menerapkan arsitektur <span class="text-brand-cyan font-mono font-medium">High Availability Active-Standby</span> pada perangkat bergerak, serta mengoptimalkan jalur komunikasi API kampus agar menghasilkan respon instan (~0.4 detik) dan stabil.
+<p class="text-sm text-zinc-400 leading-relaxed font-normal">
+              Di PENS, fokusku berkembang ke rekayasa perangkat lunak backend dan otomatisasi alur kerja: merancang sistem bot cerdas yang dapat beroperasi 24 jam penuh tanpa henti, menerapkan arsitektur <strong class="text-zinc-200 font-mono font-medium">[High Availability Active-Standby]</strong> pada perangkat bergerak, serta mengoptimalkan jalur komunikasi API kampus agar menghasilkan respon instan (~0.4 detik) dan stabil.
             </p>
-          </div>
-
-          <!-- Dual Identity Pillars -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-zinc-800/80 text-xs">
-            <div class="space-y-1 p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800/60">
-              <div class="font-mono font-semibold text-amber-400 flex items-center gap-1.5">
-                <i data-lucide="server" class="w-3.5 h-3.5"></i>
-                <span>Fondasi SMK (ITNSA)</span>
-              </div>
-              <div class="text-zinc-400 text-[11px] leading-relaxed">
-                Linux Server, Routing BGP/OSPF, DNS BIND9, Nginx, Troubleshooting Infrastruktur.
-              </div>
-            </div>
-            <div class="space-y-1 p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800/60">
-              <div class="font-mono font-semibold text-brand-cyan flex items-center gap-1.5">
-                <i data-lucide="code" class="w-3.5 h-3.5"></i>
-                <span>Eksplorasi PENS (D4 IT)</span>
-              </div>
-              <div class="text-zinc-400 text-[11px] leading-relaxed">
-                Software Engineering, Bot 24/7, ThreadPool Parallel API, High Availability, C &amp; Python.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Documentation Card (PENS Gathering) -->
-        <div class="lg:col-span-5 glass-card p-4 rounded-3xl flex flex-col justify-between space-y-4 group overflow-hidden">
-          <div class="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden border border-white/5">
-            <img src="assets/images/profile/pens-almamater.jpg" alt="Dokumentasi Mahasiswa Departemen Teknik Informatika dan Komputer PENS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/20 to-transparent"></div>
-            
-            <div class="absolute top-3 left-3">
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-dark-950/80 text-zinc-200 border border-white/10 backdrop-blur-md">
-                PENS • DTIK
+<!-- Milestones Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+<div class="p-4 rounded-sm bg-zinc-950 border border-zinc-800 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-zinc-300">
+<span class="material-symbols-outlined text-[18px]">lan</span>
+<span class="font-mono text-xs font-semibold text-white uppercase tracking-wider">Fondasi SMK (ITNSA)</span>
+</div>
+<p class="text-xs text-zinc-500 leading-relaxed font-mono">
+                  Linux Server, Routing BGP/OSPF, DNS BIND9, Nginx, Troubleshooting Infrastruktur.
+                </p>
+</div>
+<div class="p-4 rounded-sm bg-zinc-950 border border-zinc-800 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-zinc-300">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+<span class="font-mono text-xs font-semibold text-white uppercase tracking-wider">Eksplorasi PENS (D4 IT)</span>
+</div>
+<p class="text-xs text-zinc-500 leading-relaxed font-mono">
+                  Software Engineering, Bot 24/7, ThreadPool Parallel API, High Availability, C &amp; Python.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Almamater Campus Showcase Card -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="relative flex-1 rounded-sm mono-card overflow-hidden flex flex-col justify-end p-6 group">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-35 grayscale group-hover:opacity-55 transition-opacity duration-500" data-alt="Indonesian engineering students in graduation or campus celebration wearing formal white and almamater jackets with banner Bridge to the Future at Politeknik Elektronika Negeri Surabaya." style="background-image: url('assets/images/profile/pens-almamater.jpg')"></div>
+<!-- Solid overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/70 to-[#09090b]/40"></div>
+<!-- Campus Content -->
+<div class="relative z-10 flex flex-col gap-3">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 text-zinc-300 self-start font-mono text-[10px] font-semibold tracking-wider">
+<span>[PENS • DTIK]</span>
+</div>
+<div>
+<h3 class="font-sans text-xl sm:text-2xl text-white font-bold tracking-tight">Departemen Teknik Informatika &amp; Komputer</h3>
+<span class="font-mono text-xs text-zinc-400">Jas Almamater PENS • "Bridge To the Future"</span>
+</div>
+<p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
+                Menempuh pendidikan sarjana terapan di Kampus Tradisi Juara PENS, mengintegrasikan ketangguhan infrastruktur fisik dengan rekayasa software modern.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: KARYA NYATA (PROYEK & SISTEM REKAYASA) -->
+<section class="py-14 border-t border-zinc-800" id="proyek">
+<div class="flex items-center justify-between mb-8">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1.5 w-1.5 rounded-full bg-white"></span>
+<span class="font-mono text-[11px] text-zinc-400 uppercase tracking-widest">KARYA NYATA</span>
+</div>
+<h2 class="font-sans text-2xl sm:text-3xl text-white font-bold tracking-tight">Proyek &amp; Sistem Rekayasa</h2>
+</div>
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm mono-card hover:border-zinc-600 text-xs font-mono text-zinc-300 hover:text-white transition-all" href="https://github.com/kycjojo" rel="noopener noreferrer" target="_blank">
+<span>Semua di GitHub</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Bento Grid for Projects -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- PROJECT 1: ETHOL Assist (Featured Large Card) -->
+<div class="lg:col-span-7 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
+<div>
+<!-- Top Badges & Status -->
+<div class="flex items-center justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-sm bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div>
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_01]</span>
+<h3 class="font-sans text-lg sm:text-xl text-white font-bold tracking-tight">ETHOL Assist <span class="text-zinc-500 font-mono text-xs font-normal">(etholasist)</span></h3>
+</div>
+</div>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-700 text-zinc-200 font-mono text-[10px] font-semibold tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                24/7 ACTIVE
               </span>
-            </div>
-            
-            <div class="absolute bottom-3 inset-x-3 text-xs text-white">
-              <div class="font-semibold font-heading text-sm">Departemen Teknik Informatika &amp; Komputer</div>
-              <div class="text-[11px] text-zinc-300 font-mono">Jas Almamater PENS • "Bridge to the Future"</div>
-            </div>
-          </div>
-
-          <div class="px-1 text-xs text-zinc-400 leading-relaxed">
-            Menempuh pendidikan sarjana terapan di Kampus Tradisi Juara PENS, mengintegrasikan ketangguhan infrastruktur fisik dengan rekayasa software modern.
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS SECTION -->
-    <section id="projects" class="space-y-8">
-      <div class="flex items-center justify-between">
-        <div class="space-y-1">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-brand-indigo"></span>
-            <h2 class="text-xs font-mono uppercase tracking-widest text-brand-indigo font-semibold">Karya Nyata</h2>
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">Proyek &amp; Sistem Rekayasa</h3>
-        </div>
-        <a href="https://github.com/kycjojo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors">
-          <span>Semua di GitHub</span>
-          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- PROJECT 1: etholasist -->
-        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between space-y-5 hover:border-zinc-700/80 transition-all group">
-          <div class="space-y-4">
-            <div class="flex items-start justify-between gap-3">
-              <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform">
-                <i data-lucide="bot" class="w-6 h-6"></i>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  24/7 Active
-                </span>
-              </div>
-            </div>
-
-            <div class="space-y-2">
-              <h4 class="text-xl font-heading font-bold text-white group-hover:text-brand-cyan transition-colors">
-                ETHOL Assist (etholasist)
-              </h4>
-              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Ekosistem bot otomatisasi presensi &amp; notifikasi tugas baru 24/7 untuk platform ETHOL PENS. Dilengkapi arsitektur High-Availability (Active-Standby) multi-device di Termux, auto-standdown saat deteksi HTTP 409, lisensi kriptografi HMAC-SHA256, dan integrasi QRIS dinamis via Webhook.
-              </p>
-            </div>
-
-            <!-- Tech Badges -->
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">Python</span>
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">SQLite</span>
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">AsyncIO</span>
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">Termux</span>
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">Telegram API</span>
-            </div>
-          </div>
-
-          <!-- Links -->
-          <div class="flex items-center justify-between pt-4 border-t border-zinc-800/80">
-            <a href="https://t.me/jojoethol_bot" target="_blank" class="text-xs font-semibold text-brand-cyan hover:underline inline-flex items-center gap-1">
-              <span>Buka @jojoethol_bot</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-            <a href="https://github.com/kycjojo/etholasist" target="_blank" class="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800/60 transition-colors">
-              <i data-lucide="github" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- PROJECT 2: mis_bot -->
-        <div class="glass-card p-6 rounded-3xl flex flex-col justify-between space-y-5 hover:border-zinc-700/80 transition-all group">
-          <div class="space-y-4">
-            <div class="flex items-start justify-between gap-3">
-              <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-105 transition-transform">
-                <i data-lucide="calendar" class="w-6 h-6"></i>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">
-                  Fast Parallel
-                </span>
-              </div>
-            </div>
-
-            <div class="space-y-2">
-              <h4 class="text-xl font-heading font-bold text-white group-hover:text-brand-indigo transition-colors">
-                MIS Academic Bot (mis_bot)
-              </h4>
-              <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Asisten data akademik dan pemantau ruangan kuliah kosong realtime (<code class="text-zinc-200">/cekruang</code>). Menerapkan ThreadPool parallel fetcher dengan latensi ~0.4 detik, kalkulasi status ruang pada 4 gedung (D4, D3, SAW, Pasca), serta migrasi total ke safe HTML parser anti-crash.
-              </p>
-            </div>
-
-            <!-- Tech Badges -->
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">Python</span>
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">ThreadPoolExecutor</span>
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">REST API</span>
-              <span class="px-2.5 py-0.5 rounded-md bg-zinc-800/80 text-[11px] font-mono text-zinc-300">HTML Parsing</span>
-            </div>
-          </div>
-
-          <!-- Links -->
-          <div class="flex items-center justify-between pt-4 border-t border-zinc-800/80">
-            <span class="text-xs font-semibold text-brand-indigo inline-flex items-center gap-1">
-              <span>Fitur: /cekruang, /jadwal, /nilai</span>
+</div>
+<!-- Description -->
+<p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6 font-normal">
+              Ekosistem bot otomatisasi presensi &amp; notifikasi tugas baru 24/7 untuk platform ETHOL PENS. Dilengkapi arsitektur High-Availability (Active-Standby) multi-device di Termux, auto-standdown saat deteksi HTTP 409, lisensi kriptografi HMAC-SHA256, dan integrasi QRIS dinamis via Webhook.
+            </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Python</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">SQLite</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">AsyncIO</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Termux</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Telegram API</span>
+</div>
+</div>
+<!-- Bottom Action Links -->
+<div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+<a class="inline-flex items-center gap-2 font-mono text-xs text-white hover:text-zinc-300 transition-colors font-semibold" href="https://t.me/jojoethol_bot" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Buka @jojoethol_bot</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+<a class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/etholasist" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+</a>
+</div>
+</div>
+<!-- PROJECT 2: MIS Academic Bot (mis_bot) -->
+<div class="lg:col-span-5 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
+<div>
+<!-- Header Badges -->
+<div class="flex items-center justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-sm bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div>
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_02]</span>
+<h3 class="font-sans text-lg sm:text-xl text-white font-bold tracking-tight">MIS Academic Bot <span class="text-zinc-500 font-mono text-xs font-normal">(mis_bot)</span></h3>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-700 text-zinc-300 font-mono text-[10px] font-semibold tracking-wider">
+                [PARALLEL FETCH]
+              </span>
+</div>
+<!-- Description -->
+<p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6 font-normal">
+              Asisten data akademik dan pemantau ruangan kuliah kosong realtime (<code class="text-white font-mono text-xs">/cekruang</code>). Menerapkan ThreadPool parallel fetcher dengan latensi ~0.4 detik, kalkulasi status ruang pada 4 gedung (D4, D3, SAW, Pasca), serta migrasi total ke safe HTML parser anti-crash.
+            </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-2 mb-4 font-mono text-xs">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Python</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">ThreadPoolExecutor</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">REST API</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">HTML Parsing</span>
+</div>
+</div>
+<!-- Bottom Footer Details -->
+<div class="flex items-center justify-between pt-4 border-t border-zinc-800 font-mono text-xs">
+<span class="text-zinc-500 text-[11px]">
+              Fitur: /cekruang, /jadwal, /nilai
             </span>
-            <span class="px-2 py-1 rounded bg-zinc-800 text-[10px] font-mono text-zinc-400">Internal PENS</span>
-          </div>
-        </div>
-
-        <!-- PROJECT 3: Web Portofolio -->
-        <div class="md:col-span-2 glass-card p-6 rounded-3xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:border-zinc-700/80 transition-all">
-          <div class="space-y-2 max-w-2xl">
-            <div class="flex items-center gap-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                Web Portfolio
-              </span>
-              <span class="text-xs text-zinc-500">•</span>
-              <span class="text-xs text-zinc-400 font-mono">portojojoit.vercel.app</span>
-            </div>
-            <h4 class="text-xl font-heading font-bold text-white">
-              Personal Engineering Showcase
-            </h4>
-            <p class="text-xs sm:text-sm text-zinc-400">
+<span class="text-[10px] px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-800 text-zinc-400 uppercase">Internal PENS</span>
+</div>
+</div>
+<!-- PROJECT 3: Personal Engineering Showcase (Full-width Bento banner) -->
+<div class="lg:col-span-12 rounded-sm mono-card p-6 lg:p-7 flex flex-col md:flex-row items-center justify-between gap-6 group hover:border-zinc-700 transition-all">
+<div class="flex flex-col gap-2 max-w-3xl">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 text-zinc-300 font-mono text-[10px] uppercase font-semibold tracking-wider">[WEB PORTFOLIO]</span>
+<span class="font-mono text-xs text-zinc-400">portojojoit.vercel.app</span>
+</div>
+<h3 class="font-sans text-xl sm:text-2xl text-white font-bold tracking-tight">Personal Engineering Showcase</h3>
+<p class="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
               Situs portofolio personal responsif yang menampilkan rekam jejak sertifikasi kompetisi ITNSA, dokumentasi arsitektur sistem, dan proyek pengembangan perangkat lunak mandiri.
             </p>
-          </div>
-          <div class="flex items-center gap-3 w-full md:w-auto">
-            <a href="https://github.com/kycjojo/portofolio" target="_blank" class="p-2.5 rounded-xl glass-card text-zinc-300 hover:text-white transition-colors">
-              <i data-lucide="github" class="w-4 h-4"></i>
-            </a>
-            <a href="https://portojojoit.vercel.app" target="_blank" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white text-zinc-950 hover:bg-zinc-200 transition-all flex items-center justify-center gap-1.5 flex-1 md:flex-initial">
-              <span>Buka Demo</span>
-              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TECH STACK & SKILLS (Aiman Style Categorized) -->
-    <section id="skills" class="space-y-8">
-      <div class="space-y-1">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
-          <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan font-semibold">Keahlian Teknis</h2>
-        </div>
-        <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">Tech Stack &amp; Tools</h3>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-        <!-- Languages -->
-        <div class="glass-card p-5 rounded-2xl space-y-3">
-          <div class="flex items-center gap-2 text-sm font-heading font-bold text-zinc-200">
-            <i data-lucide="code-2" class="w-4 h-4 text-brand-cyan"></i>
-            <span>Bahasa Pemrograman</span>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Python
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> C
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Bash / Shell Scripting
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span> JavaScript
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> PHP
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> SQL (SQLite)
-            </span>
-          </div>
-        </div>
-
-        <!-- Infrastructure & SysAdmin -->
-        <div class="glass-card p-5 rounded-2xl space-y-3">
-          <div class="flex items-center gap-2 text-sm font-heading font-bold text-zinc-200">
-            <i data-lucide="server" class="w-4 h-4 text-emerald-400"></i>
-            <span>Sistem Operasi &amp; Jaringan (ITNSA)</span>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Linux (Debian &amp; Ubuntu)
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Cisco IOS Routing
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> MikroTik RouterOS
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> DNS BIND9 &amp; Nginx
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Termux Android Host
-            </span>
-          </div>
-        </div>
-
-        <!-- Automation & Bot Architectures -->
-        <div class="glass-card p-5 rounded-2xl space-y-3">
-          <div class="flex items-center gap-2 text-sm font-heading font-bold text-zinc-200">
-            <i data-lucide="cpu" class="w-4 h-4 text-brand-indigo"></i>
-            <span>Otomatisasi &amp; Rekayasa Bot</span>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Telegram Bot API
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> ThreadPoolExecutor
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> HMAC-SHA256 Token Signature
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> HTTP Keep-Alive Pooling
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Webhook Payment Handler
-            </span>
-          </div>
-        </div>
-
-        <!-- Dev Tools & Workflows -->
-        <div class="glass-card p-5 rounded-2xl space-y-3">
-          <div class="flex items-center gap-2 text-sm font-heading font-bold text-zinc-200">
-            <i data-lucide="wrench" class="w-4 h-4 text-amber-400"></i>
-            <span>Alat Bantu &amp; Workflow</span>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span> Git &amp; GitHub
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Visual Studio Code
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Android ADB
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> Bootstrap 5
-            </span>
-            <span class="px-3 py-1.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-200 font-medium flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Tailwind CSS
-            </span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS & AWARDS -->
-    <section id="achievements" class="space-y-8">
-      <div class="space-y-1">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-          <h2 class="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold">Prestasi &amp; Sertifikasi</h2>
-        </div>
-        <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">Pencapaian Kompetisi</h3>
-      </div>
-
-      <div class="space-y-4">
-        <!-- Award 1 -->
-        <div class="glass-card p-6 rounded-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-amber-500/10 hover:border-amber-500/30 transition-all">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0 mt-1 sm:mt-0">
-              <i data-lucide="award" class="w-6 h-6"></i>
-            </div>
-            <div class="space-y-1">
-              <div class="flex flex-wrap items-center gap-2">
-                <h4 class="text-base sm:text-lg font-heading font-bold text-white">Medallion for Excellence</h4>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/10 text-amber-300">Tingkat Provinsi</span>
-              </div>
-              <p class="text-xs sm:text-sm text-zinc-400">
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<a class="h-9 w-9 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/portofolio" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-white text-black font-mono font-semibold text-xs hover:bg-zinc-200 transition-all" href="https://portojojoit.vercel.app" rel="noopener noreferrer" target="_blank"><span>Buka Demo</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: KEAHLIAN TEKNIS (TECH STACK & TOOLS) -->
+<section class="py-14 border-t border-zinc-800" id="keahlian">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1.5 w-1.5 rounded-full bg-white"></span>
+<span class="font-mono text-[11px] text-zinc-400 uppercase tracking-widest">KEAHLIAN TEKNIS</span>
+</div>
+<h2 class="font-sans text-2xl sm:text-3xl text-white font-bold tracking-tight mb-8">Tech Stack &amp; Tools</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Category 1: Bahasa Pemrograman -->
+<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[18px] text-zinc-400">code</span>
+<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Bahasa Pemrograman</h3>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Python</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">C</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Bash / Shell Scripting</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">JavaScript</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">PHP</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">SQL (SQLite)</span>
+</div>
+</div>
+<!-- Category 2: Sistem Operasi & Jaringan (ITNSA) -->
+<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[18px] text-zinc-400">dns</span>
+<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Sistem Operasi &amp; Jaringan (ITNSA)</h3>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Linux (Debian &amp; Ubuntu)</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Cisco IOS Routing</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">MikroTik RouterOS</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">DNS BIND9 &amp; Nginx</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Termux Android Host</span>
+</div>
+</div>
+<!-- Category 3: Otomatisasi & Rekayasa Bot -->
+<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[18px] text-zinc-400">precision_manufacturing</span>
+<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Otomatisasi &amp; Rekayasa Bot</h3>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Telegram Bot API</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">ThreadPoolExecutor</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">HMAC-SHA256 Token Signature</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">HTTP Keep-Alive Pooling</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Webhook Payment Handler</span>
+</div>
+</div>
+<!-- Category 4: Alat Bantu & Workflow -->
+<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[18px] text-zinc-400">build</span>
+<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Alat Bantu &amp; Workflow</h3>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Git &amp; GitHub</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Visual Studio Code</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Android ADB</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Bootstrap 5</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Tailwind CSS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: PRESTASI & SERTIFIKASI -->
+<section class="py-14 border-t border-zinc-800" id="prestasi">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1.5 w-1.5 rounded-full bg-white"></span>
+<span class="font-mono text-[11px] text-zinc-400 uppercase tracking-widest">PRESTASI &amp; SERTIFIKASI</span>
+</div>
+<h2 class="font-sans text-2xl sm:text-3xl text-white font-bold tracking-tight mb-8">Pencapaian Kompetisi</h2>
+<div class="flex flex-col gap-3">
+<!-- Award 1: Medallion for Excellence -->
+<div class="p-5 rounded-sm mono-card flex flex-col md:flex-row items-start md:items-center justify-between gap-5 group hover:border-zinc-700 transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-sm bg-zinc-900 text-white border border-zinc-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">military_tech</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-sans text-base text-white font-semibold">Medallion for Excellence</h3>
+<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 text-zinc-300 font-mono text-[10px] uppercase font-bold">[TINGKAT PROVINSI]</span>
+</div>
+<p class="text-xs sm:text-sm text-zinc-400">
                 Lomba Kompetensi Siswa (LKS) SMK Tingkat Jawa Timur ke-34 (2026) Bidang IT Network System Administration.
               </p>
-              <div class="text-[11px] text-zinc-500 font-mono">Dinas Pendidikan Provinsi Jawa Timur • No: 400.3/2081/101.3/2026</div>
-            </div>
-          </div>
-          <a href="assets/certificates/sertifikat-lks-jatim-mfe.pdf" target="_blank" class="px-3.5 py-2 rounded-xl text-xs font-medium glass-card text-zinc-300 hover:text-white inline-flex items-center gap-1.5 self-end sm:self-center">
-            <span>Sertifikat</span>
-            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-
-        <!-- Award 2 -->
-        <div class="glass-card p-6 rounded-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-zinc-700/80 transition-all">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan flex-shrink-0 mt-1 sm:mt-0">
-              <i data-lucide="medal" class="w-6 h-6"></i>
-            </div>
-            <div class="space-y-1">
-              <div class="flex flex-wrap items-center gap-2">
-                <h4 class="text-base sm:text-lg font-heading font-bold text-white">Juara 1 (1st Place)</h4>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-brand-cyan/10 text-brand-cyan">Tingkat Kabupaten</span>
-              </div>
-              <p class="text-xs sm:text-sm text-zinc-400">
+<span class="font-mono text-[11px] text-zinc-500 mt-1">
+                Dinas Pendidikan Provinsi Jawa Timur • No: 400.3/2081/101.3/2026
+              </span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-white text-xs font-mono font-medium shrink-0 transition-colors" href="assets/certificates/sertifikat-lks-jatim-mfe.pdf" target="_blank">
+<span>Sertifikat</span>
+<span class="material-symbols-outlined text-[14px]">file_download</span>
+</a>
+</div>
+<!-- Award 2: Juara 1 Jombang -->
+<div class="p-5 rounded-sm mono-card flex flex-col md:flex-row items-start md:items-center justify-between gap-5 group hover:border-zinc-700 transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-sm bg-zinc-900 text-white border border-zinc-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">trophy</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-sans text-base text-white font-semibold">Juara 1 (1st Place)</h3>
+<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 text-zinc-300 font-mono text-[10px] uppercase font-bold">[TINGKAT KABUPATEN]</span>
+</div>
+<p class="text-xs sm:text-sm text-zinc-400">
                 Seleksi LKS Dikmen Tingkat Kabupaten Jombang (2026) Bidang IT Network System Administration.
               </p>
-              <div class="text-[11px] text-zinc-500 font-mono">Cabang Dinas Pendidikan Wilayah Kab. Jombang • No: 400.3/301/106.6.26/2026</div>
-            </div>
-          </div>
-          <a href="assets/certificates/sertifikat-lks-kabupaten.pdf" target="_blank" class="px-3.5 py-2 rounded-xl text-xs font-medium glass-card text-zinc-300 hover:text-white inline-flex items-center gap-1.5 self-end sm:self-center">
-            <span>Sertifikat</span>
-            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section id="education" class="space-y-8">
-      <div class="space-y-1">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">Riwayat Belajar</h2>
-        </div>
-        <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">Pendidikan Formal</h3>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Kampus PENS -->
-        <div class="glass-card p-6 rounded-3xl space-y-3">
-          <div class="flex items-center justify-between text-xs text-zinc-400 font-mono">
-            <span>2026 — Sekarang</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Sedang Berjalan</span>
-          </div>
-          <div class="space-y-1">
-            <h4 class="text-lg font-heading font-bold text-white">Politeknik Elektronika Negeri Surabaya</h4>
-            <div class="text-xs text-brand-cyan font-medium">D4 Teknik Informatika (Departemen Teknik Informatika &amp; Komputer)</div>
-            <p class="text-xs text-zinc-400 pt-1">
+<span class="font-mono text-[11px] text-zinc-500 mt-1">
+                Cabang Dinas Pendidikan Wilayah Kab. Jombang • No: 400.3/301/106.6.26/2026
+              </span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-white text-xs font-mono font-medium shrink-0 transition-colors" href="assets/certificates/sertifikat-lks-kabupaten.pdf" target="_blank">
+<span>Sertifikat</span>
+<span class="material-symbols-outlined text-[14px]">file_download</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION: RIWAYAT BELAJAR (PENDIDIKAN FORMAL) -->
+<section class="py-14 border-t border-zinc-800" id="pendidikan">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-1.5 w-1.5 rounded-full bg-white"></span>
+<span class="font-mono text-[11px] text-zinc-400 uppercase tracking-widest">RIWAYAT BELAJAR</span>
+</div>
+<h2 class="font-sans text-2xl sm:text-3xl text-white font-bold tracking-tight mb-8">Pendidikan Formal</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- PENS -->
+<div class="p-6 rounded-sm mono-card flex flex-col justify-between gap-5 group hover:border-zinc-700 transition-all">
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-mono text-xs text-zinc-500">2026 — Sekarang</span>
+<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 text-zinc-300 font-mono text-[10px] uppercase font-semibold">[SEDANG BERJALAN]</span>
+</div>
+<h3 class="font-sans text-lg text-white font-bold tracking-tight">Politeknik Elektronika Negeri Surabaya</h3>
+<span class="font-mono text-xs text-zinc-400">D4 Teknik Informatika (Departemen Teknik Informatika &amp; Komputer)</span>
+<p class="text-xs sm:text-sm text-zinc-400 leading-relaxed pt-1 font-normal">
               Fokus pada rekayasa perangkat lunak, algoritma pemrograman, sistem komputer, dan eksplorasi automasi robotika.
             </p>
-          </div>
-        </div>
-
-        <!-- SMKN Gudo Jombang -->
-        <div class="glass-card p-6 rounded-3xl space-y-3">
-          <div class="flex items-center justify-between text-xs text-zinc-400 font-mono">
-            <span>2023 — 2026</span>
-            <span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Lulus</span>
-          </div>
-          <div class="space-y-1">
-            <h4 class="text-lg font-heading font-bold text-white">SMK Negeri Gudo Jombang</h4>
-            <div class="text-xs text-zinc-300 font-medium">Teknik Komputer dan Jaringan (TKJ)</div>
-            <p class="text-xs text-zinc-400 pt-1">
+</div>
+<div class="flex items-center gap-2 text-zinc-500 font-mono text-xs pt-2 border-t border-zinc-900">
+<span class="material-symbols-outlined text-[15px] text-zinc-400">school</span>
+<span>Surabaya, Jawa Timur</span>
+</div>
+</div>
+<!-- SMK Negeri Gudo Jombang -->
+<div class="p-6 rounded-sm mono-card flex flex-col justify-between gap-5 group hover:border-zinc-700 transition-all">
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-mono text-xs text-zinc-500">2023 — 2026</span>
+<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 text-zinc-400 font-mono text-[10px] uppercase font-semibold">[LULUS]</span>
+</div>
+<h3 class="font-sans text-lg text-white font-bold tracking-tight">SMK Negeri Gudo Jombang</h3>
+<span class="font-mono text-xs text-zinc-400">Teknik Komputer dan Jaringan (TKJ)</span>
+<p class="text-xs sm:text-sm text-zinc-400 leading-relaxed pt-1 font-normal">
               Perwakilan kontingen sekolah dalam ajang LKS IT Network System Administration hingga tingkat Provinsi Jawa Timur.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER / CONTACT -->
-    <footer id="contact" class="pt-8 border-t border-zinc-800/80 space-y-8">
-      <div class="glass-card p-8 rounded-3xl text-center space-y-5">
-        <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">
-          Mari Terhubung &amp; Berkolaborasi
-        </h3>
-        <p class="text-sm text-zinc-400 max-w-lg mx-auto">
-          Terbuka untuk diskusi proyek otomatisasi, eksplorasi sistem Linux/jaringan, atau kolaborasi rekayasa perangkat lunak.
-        </p>
-        <div class="flex flex-wrap justify-center gap-3 pt-2">
-          <a href="https://t.me/Jojonewbie" target="_blank" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-white text-zinc-950 hover:bg-zinc-200 transition-all inline-flex items-center gap-2 shadow-lg">
-            <i data-lucide="send" class="w-3.5 h-3.5"></i>
-            <span>Telegram (@Jojonewbie)</span>
-          </a>
-          <a href="mailto:jojookta@it.student.pens.ac.id" class="px-5 py-2.5 rounded-full text-xs font-semibold glass-card text-zinc-200 hover:text-white transition-all inline-flex items-center gap-2">
-            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-            <span>Email Kampus</span>
-          </a>
-          <a href="https://github.com/kycjojo" target="_blank" class="px-5 py-2.5 rounded-full text-xs font-semibold glass-card text-zinc-200 hover:text-white transition-all inline-flex items-center gap-2">
-            <i data-lucide="github" class="w-3.5 h-3.5"></i>
-            <span>GitHub (@kycjojo)</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-3 pb-6">
-        <div>&copy; 2026 Rochmad Djojo Oktabianto. All rights reserved.</div>
-        <div class="flex items-center gap-4">
-          <a href="#hero" class="hover:text-zinc-300 transition-colors">Kembali ke Atas &uarr;</a>
-        </div>
-      </div>
-    </footer>
-
-  </main>
-
-  <!-- Lucide Script Init -->
-  <script>
-    lucide.createIcons();
-  </script>
-
-  <!-- Dual Split Interactive Logic (Adham Dannaway Style) -->
-  <script>
-    const splitCard = document.getElementById('splitCard');
-
-    function setSplitPosition(percent, smooth = false) {
-      percent = Math.max(10, Math.min(90, percent));
-      if (!splitCard) return;
-      const overlay = document.getElementById('splitLeftOverlay');
-      const divider = document.getElementById('splitDivider');
-      
-      if (smooth) {
-        if (overlay) overlay.style.transition = 'clip-path 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
-        if (divider) divider.style.transition = 'left 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
-        setTimeout(() => {
-          if (overlay) overlay.style.transition = 'clip-path 0.04s ease-out';
-          if (divider) divider.style.transition = 'left 0.04s ease-out';
-        }, 360);
-      }
-      splitCard.style.setProperty('--split', percent + '%');
-    }
-
-    if (splitCard) {
-      function updateFromEvent(e) {
-        const rect = splitCard.getBoundingClientRect();
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const x = clientX - rect.left;
-        const percent = (x / rect.width) * 100;
-        setSplitPosition(percent, false);
-      }
-
-      splitCard.addEventListener('mousemove', updateFromEvent);
-      splitCard.addEventListener('mouseleave', () => setSplitPosition(50, true));
-      splitCard.addEventListener('touchmove', updateFromEvent, { passive: true });
-    }
-  </script>
-</body>
-</html>
+</div>
+<div class="flex items-center gap-2 text-zinc-500 font-mono text-xs pt-2 border-t border-zinc-900">
+<span class="material-symbols-outlined text-[15px] text-zinc-400">domain</span>
+<span>Jombang, Jawa Timur</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: MARI TERHUBUNG & BERKOLABORASI (CTA) -->
+<section class="py-14 border-t border-zinc-800" id="kontak">
+<div class="relative rounded-sm mono-card p-8 lg:p-12 text-center flex flex-col items-center justify-center">
+<div class="relative z-10 max-w-2xl flex flex-col items-center gap-4">
+<div class="w-12 h-12 rounded-sm bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-[24px]">hub</span>
+</div>
+<h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+            Mari Terhubung &amp; Berkolaborasi
+          </h2>
+<p class="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
+            Terbuka untuk diskusi proyek otomatisasi, eksplorasi sistem Linux/jaringan, atau kolaborasi rekayasa perangkat lunak.
+          </p>
+<!-- Contact Buttons Row -->
+<div class="flex flex-wrap items-center justify-center gap-3 pt-4 w-full">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-white text-black font-mono font-semibold text-xs hover:bg-zinc-200 transition-all active:scale-95" href="https://t.me/Jojonewbie" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">send</span><span>Telegram (@Jojonewbie)</span></a>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-white font-mono text-xs font-medium transition-all active:scale-95" href="mailto:jojookta@it.student.pens.ac.id">
+<span class="material-symbols-outlined text-[16px] text-zinc-400">mail</span>
+<span>Email Kampus</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-white font-mono text-xs font-medium transition-all active:scale-95" href="https://github.com/kycjojo" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-zinc-400">code</span>
+<span>GitHub (@kycjojo)</span>
+</a>
+</div>
+<!-- Direct Node Telemetry Address -->
+<div class="mt-4 flex items-center gap-2 text-zinc-500 font-mono text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+<span>SSH: kycjojo@gateway.node-pens.internal • ID: 0x9F4E</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="w-full bg-[#050507] border-t border-zinc-800 mt-12"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-10"><div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pb-8 border-b border-zinc-900"><div class="md:col-span-6 flex flex-col gap-3"><div class="flex items-center gap-3"><div class="h-7 w-7 rounded-sm bg-zinc-900 border border-zinc-700 flex items-center justify-center"><span class="font-mono text-xs font-bold text-white">RD</span></div><span class="font-sans text-sm font-semibold text-white">Rochmad Djojo Oktabianto</span></div><p class="text-xs sm:text-sm text-zinc-500 max-w-md leading-relaxed font-normal">Automation Engineer &amp; Systems Specialist lulusan D4 Teknik Informatika Politeknik Elektronika Negeri Surabaya (PENS). Berfokus pada arsitektur pipeline otomatis, telemetry, dan rekayasa infrastruktur terdistribusi.</p><div class="flex items-center gap-2 mt-1"><span class="font-mono text-xs text-zinc-600">ID:</span><span class="font-mono text-xs text-zinc-300 bg-zinc-900 border border-zinc-800 px-2 py-0.5 rounded-sm">KYCJOJO-SYS-NODE-01</span></div></div><div class="md:col-span-3 flex flex-col gap-3"><span class="font-mono text-xs text-zinc-400 uppercase tracking-wider font-semibold">Navigasi Cepat</span><div class="flex flex-col gap-2 font-mono text-xs"><a class="text-zinc-400 hover:text-white transition-colors" data-path="overview" href="#overview">Tentang Saya</a><a class="text-zinc-400 hover:text-white transition-colors" data-path="proyek" href="#proyek">Portofolio Rekayasa</a><a class="text-zinc-400 hover:text-white transition-colors" data-path="keahlian" href="#keahlian">Spesialisasi &amp; Tooling</a><a class="text-zinc-400 hover:text-white transition-colors" data-path="prestasi" href="#prestasi">Penghargaan &amp; Sertifikasi</a></div></div><div class="md:col-span-3 flex flex-col gap-3"><span class="font-mono text-xs text-zinc-400 uppercase tracking-wider font-semibold">Telemetri &amp; Jaringan</span><div class="flex flex-col gap-2 font-mono text-xs"><a class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2" href="https://t.me/Jojonewbie" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[14px]">terminal</span>Telegram @kycjojo</a><a class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2" href="https://github.com/kycjojo" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[14px]">code</span>GitHub /kycjojo</a><a class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2" href="https://linkedin.com" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[14px]">hub</span>LinkedIn Network</a><a class="text-zinc-400 hover:text-white transition-colors flex items-center gap-2" href="mailto:jojookta@it.student.pens.ac.id"><span class="material-symbols-outlined text-[14px]">alternate_email</span>Email Terminal</a></div></div></div><div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"><div class="flex items-center gap-3 font-mono text-xs text-zinc-500"><span>© 2026 Rochmad Djojo Oktabianto.</span><span>•</span><span>Semua Hak Cipta Dilindungi.</span></div><a class="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-400 hover:text-white transition-colors group" href="#"><span class="group-hover:-translate-y-0.5 transition-transform">Kembali Ke Atas</span><span class="material-symbols-outlined text-[15px]">arrow_upward</span></a></div></div></footer>
+</body></html>
