@@ -97,6 +97,17 @@
       background: #38bdf8;
       color: #09090b;
     }
+    .split-card {
+      --split: 50%;
+    }
+    .split-overlay {
+      clip-path: polygon(0 0, var(--split, 50%) 0, var(--split, 50%) 100%, 0 100%);
+      transition: clip-path 0.04s ease-out;
+    }
+    .split-divider {
+      left: var(--split, 50%);
+      transition: left 0.04s ease-out;
+    }
   </style>
 </head>
 
@@ -158,7 +169,7 @@
 
       <!-- Hero Headline & Bio -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-8 space-y-5">
+        <div class="lg:col-span-7 space-y-5">
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold tracking-tight leading-[1.1]">
             Membangun Sistem <br />
             <span class="gradient-text">Otomatisasi &amp; Server</span> <br />
@@ -188,22 +199,80 @@
           </div>
         </div>
 
-        <!-- Profile Card Visual -->
-        <div class="lg:col-span-4 flex justify-center lg:justify-end">
+        <!-- DUAL IDENTITY SPLIT HERO CARD (Adham Dannaway Concept) -->
+        <div class="lg:col-span-5 flex flex-col items-center lg:items-end space-y-3">
           <div class="relative group">
-            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-cyan via-brand-indigo to-purple-600 opacity-25 blur-xl group-hover:opacity-40 transition-opacity"></div>
-            <div class="relative w-64 h-72 sm:w-72 sm:h-80 rounded-2xl overflow-hidden glass-card p-2 flex flex-col justify-between">
-              <img src="assets/images/profile/foto-profil.jpg" alt="Rochmad Djojo Oktabianto" class="w-full h-56 object-cover rounded-xl" onerror="this.src='https://images.unsplash.com/photo-1534972195531-a756b1129f63?auto=format&fit=crop&w=600&q=80'" />
-              <div class="pt-2 px-2 pb-1 flex items-center justify-between text-xs">
-                <div>
-                  <div class="font-bold text-white font-heading">Rochmad Djojo</div>
-                  <div class="text-[11px] text-zinc-400 font-mono">D4 IT PENS '26</div>
+            <!-- Ambient Glow -->
+            <div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-amber-500/25 via-brand-cyan/25 to-brand-indigo/30 opacity-40 blur-xl group-hover:opacity-60 transition-opacity"></div>
+            
+            <!-- Split Container -->
+            <div id="splitCard" class="split-card relative w-[300px] sm:w-[340px] h-[400px] rounded-3xl overflow-hidden glass-card border border-white/10 shadow-2xl select-none cursor-ew-resize">
+              
+              <!-- BASE LAYER: RIGHT SIDE (<Coder / Developer>) -->
+              <div class="absolute inset-0 w-full h-full bg-zinc-950">
+                <img src="assets/images/profile/foto-profil.jpg" alt="Rochmad Djojo - Developer" class="w-full h-full object-cover object-top" onerror="this.src='assets/images/profile/pens-almamater.jpg'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/30 to-transparent"></div>
+                
+                <!-- Right Label / Badges -->
+                <div class="absolute top-4 right-4 text-right pointer-events-none">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/30 backdrop-blur-md">
+                    <i data-lucide="code" class="w-3 h-3"></i>
+                    <span>&lt;Coder&gt;</span>
+                  </span>
+                  <div class="text-[11px] text-zinc-300 font-mono mt-1 font-semibold">Software &amp; Bot Dev</div>
                 </div>
-                <div class="px-2 py-1 rounded bg-brand-cyan/10 text-brand-cyan text-[10px] font-mono font-semibold">
-                  ITNSA
+
+                <div class="absolute bottom-4 right-4 text-right pointer-events-none">
+                  <div class="text-[10px] font-mono text-brand-cyan/90 font-medium">D4 IT PENS '26</div>
+                  <div class="text-xs font-heading font-bold text-white">Automation Engineer</div>
+                  <div class="text-[10px] text-zinc-400 font-mono">Python • High Availability • C</div>
                 </div>
               </div>
+
+              <!-- OVERLAY LAYER: LEFT SIDE (SysAdmin / ITNSA) -->
+              <div id="splitLeftOverlay" class="split-overlay absolute inset-0 w-full h-full">
+                <div class="relative w-full h-full bg-zinc-950">
+                  <img src="assets/images/profile/formal-smk.jpg" alt="Rochmad Djojo - SysAdmin" class="w-full h-full object-cover object-top" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/30 to-transparent"></div>
+                  
+                  <!-- Left Label / Badges -->
+                  <div class="absolute top-4 left-4 text-left pointer-events-none">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+                      <i data-lucide="server" class="w-3 h-3"></i>
+                      <span>SysAdmin</span>
+                    </span>
+                    <div class="text-[11px] text-zinc-300 font-mono mt-1 font-semibold">Network Specialist</div>
+                  </div>
+
+                  <div class="absolute bottom-4 left-4 text-left pointer-events-none">
+                    <div class="text-[10px] font-mono text-amber-400/90 font-medium">SMK TKJ • ITNSA</div>
+                    <div class="text-xs font-heading font-bold text-white">LKS Jatim Medalist</div>
+                    <div class="text-[10px] text-zinc-400 font-mono">Linux • Cisco • MikroTik</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DIVIDER BAR & DRAG HANDLE -->
+              <div id="splitDivider" class="split-divider absolute inset-y-0 w-0.5 bg-gradient-to-b from-amber-400 via-white to-brand-cyan shadow-[0_0_12px_rgba(255,255,255,0.9)] pointer-events-none">
+                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 rounded-full glass-card border border-white/50 flex items-center justify-center text-white text-[10px] shadow-lg backdrop-blur-md bg-dark-900/90">
+                  <span class="flex items-center gap-0.5 font-mono text-[9px] text-zinc-200 font-bold">‹›</span>
+                </div>
+              </div>
+
             </div>
+          </div>
+
+          <!-- QUICK SWITCH TOGGLE BUTTONS -->
+          <div class="flex items-center gap-1.5 p-1 rounded-2xl glass-card text-[11px] font-mono text-zinc-400 border border-white/5">
+            <button type="button" onclick="setSplitPosition(85, true)" class="px-2.5 py-1 rounded-xl hover:text-amber-300 hover:bg-white/5 transition-all">
+              SysAdmin
+            </button>
+            <button type="button" onclick="setSplitPosition(50, true)" class="px-2.5 py-1 rounded-xl text-white font-semibold bg-white/10 border border-white/10 hover:bg-white/15 transition-all">
+              Dual 50:50
+            </button>
+            <button type="button" onclick="setSplitPosition(15, true)" class="px-2.5 py-1 rounded-xl hover:text-brand-cyan hover:bg-white/5 transition-all">
+              Developer
+            </button>
           </div>
         </div>
       </div>
@@ -233,16 +302,71 @@
     <section id="about" class="space-y-6">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
-        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan font-semibold">Tentang Saya</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-cyan font-semibold">Tentang Saya &amp; Perjalanan</h2>
       </div>
 
-      <div class="glass-card p-6 md:p-8 rounded-3xl space-y-4 text-zinc-300 text-sm md:text-base leading-relaxed">
-        <p>
-          Aku adalah mahasiswa aktif <span class="text-white font-medium">D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS)</span>. Perjalananku di dunia teknologi berakar kuat dari kompetisi <span class="text-white font-medium">IT Network System Administration (ITNSA)</span>, membekaliku dengan pemahaman mendalam tentang ekosistem Linux, konfigurasi jaringan enterprise (Cisco/MikroTik), dan pemecahan masalah sistematis.
-        </p>
-        <p>
-          Saat ini, fokus utamaku tercurah pada rekayasa perangkat lunak backend dan otomatisasi alur kerja: merancang sistem bot cerdas yang dapat beroperasi 24 jam penuh tanpa henti, menerapkan arsitektur <span class="text-brand-cyan font-mono font-medium">High Availability Active-Standby</span> pada perangkat bergerak, serta mengoptimalkan jalur komunikasi API kampus agar menghasilkan respon instan dan andal.
-        </p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- Story Card -->
+        <div class="lg:col-span-7 glass-card p-6 md:p-8 rounded-3xl space-y-5 text-zinc-300 text-sm md:text-base leading-relaxed flex flex-col justify-between">
+          <div class="space-y-4">
+            <h3 class="text-xl sm:text-2xl font-heading font-bold text-white">
+              Dari Infrastruktur Jaringan Menuju Rekayasa Sistem Cerdas
+            </h3>
+            <p>
+              Aku adalah mahasiswa aktif <span class="text-white font-medium">D4 Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS)</span>. Perjalananku berakar kuat dari kompetisi <span class="text-white font-medium">IT Network System Administration (ITNSA)</span>, membekaliku dengan pemahaman mendalam tentang administrasi Linux Server, konfigurasi perangkat jaringan fisik (Cisco &amp; MikroTik), dan pemecahan masalah sistematis.
+            </p>
+            <p>
+              Di PENS, fokusku berkembang ke rekayasa perangkat lunak backend dan otomatisasi alur kerja: merancang sistem bot cerdas yang dapat beroperasi 24 jam penuh tanpa henti, menerapkan arsitektur <span class="text-brand-cyan font-mono font-medium">High Availability Active-Standby</span> pada perangkat bergerak, serta mengoptimalkan jalur komunikasi API kampus agar menghasilkan respon instan (~0.4 detik) dan stabil.
+            </p>
+          </div>
+
+          <!-- Dual Identity Pillars -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-zinc-800/80 text-xs">
+            <div class="space-y-1 p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800/60">
+              <div class="font-mono font-semibold text-amber-400 flex items-center gap-1.5">
+                <i data-lucide="server" class="w-3.5 h-3.5"></i>
+                <span>Fondasi SMK (ITNSA)</span>
+              </div>
+              <div class="text-zinc-400 text-[11px] leading-relaxed">
+                Linux Server, Routing BGP/OSPF, DNS BIND9, Nginx, Troubleshooting Infrastruktur.
+              </div>
+            </div>
+            <div class="space-y-1 p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800/60">
+              <div class="font-mono font-semibold text-brand-cyan flex items-center gap-1.5">
+                <i data-lucide="code" class="w-3.5 h-3.5"></i>
+                <span>Eksplorasi PENS (D4 IT)</span>
+              </div>
+              <div class="text-zinc-400 text-[11px] leading-relaxed">
+                Software Engineering, Bot 24/7, ThreadPool Parallel API, High Availability, C &amp; Python.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documentation Card (PENS Gathering) -->
+        <div class="lg:col-span-5 glass-card p-4 rounded-3xl flex flex-col justify-between space-y-4 group overflow-hidden">
+          <div class="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden border border-white/5">
+            <img src="assets/images/profile/pens-almamater.jpg" alt="Dokumentasi Mahasiswa Departemen Teknik Informatika dan Komputer PENS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/20 to-transparent"></div>
+            
+            <div class="absolute top-3 left-3">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-dark-950/80 text-zinc-200 border border-white/10 backdrop-blur-md">
+                PENS • DTIK
+              </span>
+            </div>
+            
+            <div class="absolute bottom-3 inset-x-3 text-xs text-white">
+              <div class="font-semibold font-heading text-sm">Departemen Teknik Informatika &amp; Komputer</div>
+              <div class="text-[11px] text-zinc-300 font-mono">Jas Almamater PENS • "Bridge to the Future"</div>
+            </div>
+          </div>
+
+          <div class="px-1 text-xs text-zinc-400 leading-relaxed">
+            Menempuh pendidikan sarjana terapan di Kampus Tradisi Juara PENS, mengintegrasikan ketangguhan infrastruktur fisik dengan rekayasa software modern.
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -639,6 +763,42 @@
   <!-- Lucide Script Init -->
   <script>
     lucide.createIcons();
+  </script>
+
+  <!-- Dual Split Interactive Logic (Adham Dannaway Style) -->
+  <script>
+    const splitCard = document.getElementById('splitCard');
+
+    function setSplitPosition(percent, smooth = false) {
+      percent = Math.max(10, Math.min(90, percent));
+      if (!splitCard) return;
+      const overlay = document.getElementById('splitLeftOverlay');
+      const divider = document.getElementById('splitDivider');
+      
+      if (smooth) {
+        if (overlay) overlay.style.transition = 'clip-path 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+        if (divider) divider.style.transition = 'left 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
+        setTimeout(() => {
+          if (overlay) overlay.style.transition = 'clip-path 0.04s ease-out';
+          if (divider) divider.style.transition = 'left 0.04s ease-out';
+        }, 360);
+      }
+      splitCard.style.setProperty('--split', percent + '%');
+    }
+
+    if (splitCard) {
+      function updateFromEvent(e) {
+        const rect = splitCard.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const x = clientX - rect.left;
+        const percent = (x / rect.width) * 100;
+        setSplitPosition(percent, false);
+      }
+
+      splitCard.addEventListener('mousemove', updateFromEvent);
+      splitCard.addEventListener('mouseleave', () => setSplitPosition(50, true));
+      splitCard.addEventListener('touchmove', updateFromEvent, { passive: true });
+    }
   </script>
 </body>
 </html>

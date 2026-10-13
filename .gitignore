@@ -34,3 +34,6 @@ impeccable/
 # System Files
 .DS_Store
 Thumbs.db
+
+.codex/
+index.old.html
