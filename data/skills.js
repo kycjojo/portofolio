@@ -58,6 +58,7 @@ const SKILLS = [
       { name: "HTML5 & CSS3", icon: "html5" },
       { name: "JavaScript & TypeScript", icon: "javascript" },
       { name: "Python", icon: "python" },
+      { name: "OpenCV (Computer Vision)", icon: "opencv" },
       { name: "PHP & Laravel", icon: "php" },
       { name: "Node.js & Express", icon: "nodejs" },
       { name: "SQL Analytics", icon: "postgresql" },

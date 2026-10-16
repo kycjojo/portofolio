@@ -202,6 +202,7 @@ function renderSkills() {
     bash: "devicon-bash-plain",
     windows11: "devicon-windows8-plain",
     proxmox: "devicon-linux-plain",
+    opencv: "devicon-opencv-plain",
   };
 
   grid.innerHTML = SKILLS.map(
