@@ -52,6 +52,19 @@ const SKILLS = [
     ],
   },
   {
+    category: "Mobile & Application Development",
+    icon: "📱",
+    items: [
+      { name: "React Native" },
+      { name: "Expo Framework" },
+      { name: "TypeScript" },
+      { name: "SQLite (WAL Mode)" },
+      { name: "Zustand State Mgmt" },
+      { name: "Android APK Build" },
+      { name: "Hermes Bytecode" },
+    ],
+  },
+  {
     category: "Software & Web Development",
     icon: "💻",
     items: [

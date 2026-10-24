@@ -156,6 +156,89 @@ const PROJECTS = [
     teamType: "Individu",
     status: "Juara 3 (Bronze Medalist)",
   },
+  {
+    id: "playful-pocket",
+    name: "Playful Pocket (hemachi) — Aplikasi Finansial Android Offline-First",
+    category: "Mobile Application",
+    tagline: "React Native • Expo • TypeScript • SQLite (WAL) • Zustand",
+    thumbnail: "assets/images/projects/playful-pocket.png",
+    thumbnailDark: null,
+    liveDemo: "https://github.com/kycjojo/hemachi/raw/main/apk/PlayfulPocket-v1.0.0.apk",
+    github: "https://github.com/kycjojo/hemachi",
+    certificatePdf: null,
+    certificateNo: null,
+    organizer: "Personal Project",
+    date: "Oktober 2026",
+    location: "Surabaya, Jawa Timur",
+    deviceType: "mobile",
+
+    summary:
+      "Aplikasi pencatat keuangan dan anggaran mahasiswa berbasis Android offline-first dengan arsitektur SQLite (WAL mode) untuk penyimpanan lokal berlatensi ultra-rendah. Dilengkapi UI neo-brutalisme, state management terpusat (Zustand), sistem budgeting 4 pilar finansial, visualisasi analitik pengeluaran interaktif, dan mekanisme update mandiri via GitHub Releases.",
+
+    techStack: [
+      { name: "React Native", icon: "react" },
+      { name: "Expo Framework", icon: "expo" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "SQLite (WAL Mode)", icon: "sqlite" },
+      { name: "Zustand", icon: "zustand" },
+      { name: "Android APK", icon: "android" },
+    ],
+  },
+  {
+    id: "acepens-bot",
+    name: "ACE PENS Bot (ACEPENS_BOT) — Kas Kelas QRIS & Asisten Akademik PENS",
+    category: "Telegram Bot & Automation",
+    tagline: "Python • Telegram Bot API • MIS PENS API • SQLite • Google Apps Script",
+    thumbnail: "assets/images/projects/acepens-bot.png",
+    thumbnailDark: null,
+    liveDemo: "https://t.me/ACEPENS_BOT",
+    github: "https://github.com/kycjojo/ACEPENS_BOT",
+    certificatePdf: null,
+    certificateNo: null,
+    organizer: "PENS Class Infrastructure",
+    date: "Oktober 2026",
+    location: "Surabaya, Jawa Timur",
+    deviceType: "desktop",
+
+    summary:
+      "Asisten akademik terpadu & kas kelas cerdas: terintegrasi penuh dengan REST API portal akademik MIS PENS untuk kueri cepat jadwal perkuliahan mahasiswa/kelas, profil & NIP dosen pengampu, serta pemetaan ketersediaan ruang kuliah kosong (/cekruang) lintas 4 gedung kampus (D4, D3, SAW, Pasca) berbasis ThreadPoolExecutor (~0.4s). Dilengkapi modul pembayaran kas QRIS (/bayarkas), verifikasi approval bendahara interaktif, dan sinkronisasi otomatis ke Google Sheets via Webhook.",
+
+    techStack: [
+      { name: "Python", icon: "python" },
+      { name: "Telegram Bot API", icon: "telegram" },
+      { name: "MIS PENS API", icon: "api" },
+      { name: "SQLite", icon: "sqlite" },
+      { name: "Google Apps Script", icon: "google" },
+      { name: "ThreadPoolExecutor", icon: "python" },
+    ],
+  },
+  {
+    id: "ethol-assist",
+    name: "ETHOL Assist (@jojoethol_bot) — Bot Otomatisasi Presensi 24/7",
+    category: "Automation & HA",
+    tagline: "Python • SQLite • AsyncIO • Termux HA • HMAC-SHA256",
+    thumbnail: "assets/images/projects/ethol-assist.png",
+    thumbnailDark: null,
+    liveDemo: "https://t.me/jojoethol_bot",
+    github: "https://github.com/kycjojo/etholasist",
+    certificatePdf: null,
+    certificateNo: null,
+    organizer: "Personal Project",
+    date: "2026",
+    location: "Surabaya, Jawa Timur",
+    deviceType: "desktop",
+
+    summary:
+      "Ekosistem bot otomatisasi presensi & notifikasi tugas baru 24/7 untuk platform ETHOL PENS. Dilengkapi arsitektur High-Availability (Active-Standby) multi-device di Termux, auto-standdown saat deteksi HTTP 409, lisensi kriptografi HMAC-SHA256, dan integrasi QRIS dinamis via Webhook.",
+
+    techStack: [
+      { name: "Python", icon: "python" },
+      { name: "SQLite", icon: "sqlite" },
+      { name: "AsyncIO", icon: "python" },
+      { name: "Termux", icon: "linux" },
+      { name: "HMAC-SHA256", icon: "security" },
+    ],
+  },
 ];
 
 export default PROJECTS;

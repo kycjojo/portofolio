@@ -78,7 +78,7 @@
           </h1>
 <!-- Bio Pitch -->
 <p class="text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed font-normal">
-            Halo, aku <strong class="text-white font-semibold">Rochmad Djojo Oktabianto</strong>. Pengembang bot dan sistem berbasis <strong class="text-white font-mono font-medium underline underline-offset-4 decoration-zinc-600">Python &amp; Linux</strong> dengan latar belakang kompetisi ITNSA. Berfokus pada arsitektur bot 24/7, high-throughput parallel API, dan stabilitas operasional.
+            Halo, aku <strong class="text-white font-semibold">Rochmad Djojo Oktabianto</strong>. Pengembang aplikasi mobile Android, bot otomatisasi, dan sistem server berbasis <strong class="text-white font-mono font-medium underline underline-offset-4 decoration-zinc-600">TypeScript, Python &amp; Linux</strong> dengan latar belakang medalis ITNSA. Berfokus pada offline-first app, arsitektur bot 24/7, integrasi API akademik, dan stabilitas operasional.
           </p>
 <!-- Action Hub -->
 <div class="flex flex-wrap items-center gap-3 pt-2">
@@ -430,8 +430,9 @@
 
     'projects': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 space-y-1 text-xs">
       <div class="font-bold text-white">Karya &amp; Sistem Unggulan:</div>
+      <div>• <a href="https://github.com/kycjojo/hemachi" target="_blank" class="text-white hover:underline font-semibold">Playful Pocket (hemachi)</a> - Aplikasi finansial Android offline-first (React Native, SQLite WAL, Zustand)</div>
       <div>• <a href="https://t.me/jojoethol_bot" target="_blank" class="text-white hover:underline font-semibold">ETHOL Assist (@jojoethol_bot)</a> - Bot presensi otomatis 24/7 &amp; notif tugas PENS (HA failover)</div>
-      <div>• <a href="https://t.me/ACEPENS_BOT" target="_blank" class="text-white hover:underline font-semibold">ACE PENS Bot (@ACEPENS_BOT)</a> - Kas kelas QRIS, Google Sheets sync, &amp; pemantau ruang kosong 4 gedung PENS</div>
+      <div>• <a href="https://t.me/ACEPENS_BOT" target="_blank" class="text-white hover:underline font-semibold">ACE PENS Bot (@ACEPENS_BOT)</a> - Terintegrasi API MIS PENS, kas kelas QRIS, Google Sheets sync, &amp; pemantau ruang 4 gedung</div>
       <div>• <a href="https://github.com/kycjojo/mispens_bot" target="_blank" class="text-zinc-400 hover:underline">mispens_bot (Nonaktif)</a> - Versi awal asisten akademik &amp; cek ruang kampus</div>
       <div>• <a href="https://portojojoit.vercel.app" target="_blank" class="text-zinc-300 hover:underline font-semibold">Personal Showcase</a> - portojojoit.vercel.app</div>
     </div>`,
@@ -442,9 +443,10 @@
     </div>`,
 
     'skills': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 text-xs">
-      <div><strong class="text-white">Languages &amp; Libs:</strong> Python, C, Bash/Shell, JavaScript, PHP, SQL, OpenCV</div>
-      <div><strong class="text-white">Systems:</strong> Linux Server, Cisco IOS, MikroTik, Nginx, BIND9, Termux</div>
-      <div><strong class="text-white">Engineering:</strong> High-Availability 24/7, ThreadPool, HMAC Security, Webhooks</div>
+      <div><strong class="text-white">Languages:</strong> Python, TypeScript, JavaScript, C, Bash/Shell, SQL, PHP</div>
+      <div><strong class="text-white">Mobile &amp; Frameworks:</strong> React Native, Expo, SQLite WAL Mode, Zustand</div>
+      <div><strong class="text-white">Systems &amp; Net:</strong> Linux Server, Cisco IOS Routing, MikroTik, Nginx, BIND9, Termux</div>
+      <div><strong class="text-white">Engineering:</strong> MIS PENS API, High-Availability 24/7, ThreadPool, Google Apps Script Webhooks</div>
     </div>`,
 
     'contact': `<div class="text-zinc-300 pl-3 border-l border-zinc-700 text-xs space-y-1">
@@ -697,8 +699,56 @@
 </div>
 <!-- Bento Grid for Projects -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-<!-- PROJECT 1: ETHOL Assist (Featured Large Card) -->
-<div class="lg:col-span-7 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
+
+<!-- PROJECT 1: Playful Pocket (hemachi) -->
+<div class="lg:col-span-6 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
+<div>
+<!-- Header Badges -->
+<div class="flex items-center justify-between gap-4 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-sm bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div>
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_01]</span>
+<h3 class="font-sans text-lg sm:text-xl text-white font-bold tracking-tight">Playful Pocket <span class="text-zinc-500 font-mono text-xs font-normal">(hemachi)</span></h3>
+</div>
+</div>
+<!-- Status Chip -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-700 text-zinc-200 font-mono text-[10px] font-semibold tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                ACTIVE • APK READY
+              </span>
+</div>
+<!-- Description -->
+<p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6 font-normal">
+              Aplikasi pencatat keuangan dan anggaran mahasiswa berbasis Android offline-first dengan arsitektur SQLite (WAL mode) untuk penyimpanan lokal berlatensi ultra-rendah. Dilengkapi UI neo-brutalisme, state management terpusat (Zustand), sistem budgeting 4 pilar finansial (Kampus, Kos, Makan, Pribadi), analitik pengeluaran interaktif, dan rilis APK mandiri via GitHub Releases.
+            </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">React Native</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Expo</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">TypeScript</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">SQLite (WAL)</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Zustand</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Android APK</span>
+</div>
+</div>
+<!-- Bottom Action Links -->
+<div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+<a class="inline-flex items-center gap-2 font-mono text-xs text-white hover:text-zinc-300 transition-colors font-semibold" href="https://github.com/kycjojo/hemachi/raw/main/apk/PlayfulPocket-v1.0.0.apk" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Unduh APK (v1.0.0)</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</a>
+<a class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/hemachi" rel="noopener noreferrer" target="_blank" title="Source Code">
+<span class="material-symbols-outlined text-[16px]">code</span>
+</a>
+</div>
+</div>
+
+<!-- PROJECT 2: ETHOL Assist (etholasist) -->
+<div class="lg:col-span-6 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
 <div>
 <!-- Top Badges & Status -->
 <div class="flex items-center justify-between gap-4 mb-4">
@@ -707,7 +757,7 @@
 <span class="material-symbols-outlined text-[20px]">smart_toy</span>
 </div>
 <div>
-<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_01]</span>
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_02]</span>
 <h3 class="font-sans text-lg sm:text-xl text-white font-bold tracking-tight">ETHOL Assist <span class="text-zinc-500 font-mono text-xs font-normal">(etholasist)</span></h3>
 </div>
 </div>
@@ -737,13 +787,14 @@
 <span>Buka @jojoethol_bot</span>
 <span class="material-symbols-outlined text-[13px]">open_in_new</span>
 </a>
-<a class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/etholasist" rel="noopener noreferrer" target="_blank">
+<a class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/etholasist" rel="noopener noreferrer" target="_blank" title="Source Code">
 <span class="material-symbols-outlined text-[16px]">code</span>
 </a>
 </div>
 </div>
-<!-- PROJECT 2: ACE PENS Bot (ACEPENS_BOT) -->
-<div class="lg:col-span-5 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
+
+<!-- PROJECT 3: ACE PENS Bot (ACEPENS_BOT) -->
+<div class="lg:col-span-6 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
 <div>
 <!-- Header Badges -->
 <div class="flex items-center justify-between gap-4 mb-4">
@@ -752,26 +803,27 @@
 <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
 </div>
 <div>
-<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_02]</span>
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_03]</span>
 <h3 class="font-sans text-lg sm:text-xl text-white font-bold tracking-tight">ACE PENS Bot <span class="text-zinc-500 font-mono text-xs font-normal">(ACEPENS_BOT)</span></h3>
 </div>
 </div>
 <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-700 text-zinc-200 font-mono text-[10px] font-semibold tracking-wider">
 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                ACTIVE • KAS &amp; MONITOR
+                ACTIVE • MIS API &amp; KAS
               </span>
 </div>
 <!-- Description -->
 <p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6 font-normal">
-              Evolusi asisten kelas terpadu (generasi penerus <code>mispens_bot</code>): sistem pembayaran kas mandiri via QRIS (<code class="text-white font-mono text-xs">/bayarkas</code>), approval verifikator bendahara, dan sinkronisasi otomatis ke Google Sheets. Dilengkapi pemantau ruangan kuliah kosong realtime (<code class="text-white font-mono text-xs">/cekruang</code>) lintas 4 gedung kampus PENS (D4, D3, SAW, Pasca) serta modul jadwal perkuliahan.
+              Asisten akademik terpadu &amp; kas kelas cerdas: terintegrasi penuh dengan REST API portal akademik MIS PENS untuk kueri cepat jadwal perkuliahan, direktori dosen/NIP, serta pemetaan ketersediaan ruang kuliah kosong (<code class="text-white font-mono text-xs">/cekruang</code>) lintas 4 gedung kampus (D4, D3, SAW, Pasca) berbasis ThreadPoolExecutor (~0.4s). Dilengkapi modul kas mandiri QRIS (<code class="text-white font-mono text-xs">/bayarkas</code>), approval bendahara, dan sinkronisasi otomatis Google Sheets via Webhook.
             </p>
 <!-- Tech Stack Tags -->
-<div class="flex flex-wrap gap-2 mb-4 font-mono text-xs">
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Python</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Telegram Bot API</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">MIS PENS API</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">SQLite</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Google Apps Script</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">ThreadPoolExecutor</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">REST API</span>
 </div>
 </div>
 <!-- Bottom Footer Details -->
@@ -781,31 +833,59 @@
 <span>Buka @ACEPENS_BOT</span>
 <span class="material-symbols-outlined text-[13px]">open_in_new</span>
 </a>
-<a class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/ACEPENS_BOT" rel="noopener noreferrer" target="_blank">
+<a class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/ACEPENS_BOT" rel="noopener noreferrer" target="_blank" title="Source Code">
 <span class="material-symbols-outlined text-[16px]">code</span>
 </a>
 </div>
 </div>
-<!-- PROJECT 3: Personal Engineering Showcase (Full-width Bento banner) -->
-<div class="lg:col-span-12 rounded-sm mono-card p-6 lg:p-7 flex flex-col md:flex-row items-center justify-between gap-6 group hover:border-zinc-700 transition-all">
-<div class="flex flex-col gap-2 max-w-3xl">
+
+<!-- PROJECT 4: Personal Engineering Showcase -->
+<div class="lg:col-span-6 rounded-sm mono-card p-6 lg:p-7 flex flex-col justify-between relative group hover:border-zinc-700 transition-all">
+<div>
+<!-- Header Badges -->
+<div class="flex items-center justify-between gap-4 mb-4">
 <div class="flex items-center gap-3">
-<span class="px-2 py-0.5 rounded-sm bg-zinc-800 border border-zinc-700 text-zinc-300 font-mono text-[10px] uppercase font-semibold tracking-wider">[WEB PORTFOLIO]</span>
-<span class="font-mono text-xs text-zinc-400">portojojoit.vercel.app</span>
+<div class="w-9 h-9 rounded-sm bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
 </div>
-<h3 class="font-sans text-xl sm:text-2xl text-white font-bold tracking-tight">Personal Engineering Showcase</h3>
-<p class="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
-              Situs portofolio personal responsif yang menampilkan rekam jejak sertifikasi kompetisi ITNSA, dokumentasi arsitektur sistem, dan proyek pengembangan perangkat lunak mandiri.
+<div>
+<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">[PROJECT_04]</span>
+<h3 class="font-sans text-lg sm:text-xl text-white font-bold tracking-tight">Personal Engineering Showcase</h3>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-zinc-900 border border-zinc-700 text-zinc-200 font-mono text-[10px] font-semibold tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                LIVE • VERCEL
+              </span>
+</div>
+<!-- Description -->
+<p class="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6 font-normal">
+              Situs portofolio personal responsif dengan interactive terminal emulator, audio synthesizer, showcase proyek rekayasa perangkat lunak, dokumentasi arsitektur sistem, dan rekam jejak sertifikasi kompetisi ITNSA berstandar WorldSkills.
             </p>
+<!-- Tech Stack Tags -->
+<div class="flex flex-wrap gap-2 mb-6 font-mono text-xs">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">HTML5</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Tailwind CSS</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">JavaScript</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Web Audio API</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-400">Vercel</span>
 </div>
-<div class="flex items-center gap-3 shrink-0">
-<a class="h-9 w-9 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/portofolio" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[18px]">code</span>
+</div>
+<!-- Bottom Action Links -->
+<div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+<a class="inline-flex items-center gap-2 font-mono text-xs text-white hover:text-zinc-300 transition-colors font-semibold" href="https://portojojoit.vercel.app" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Buka Demo</span>
+<span class="material-symbols-outlined text-[13px]">arrow_outward</span>
 </a>
-<a class="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-white text-black font-mono font-semibold text-xs hover:bg-zinc-200 transition-all" href="https://portojojoit.vercel.app" rel="noopener noreferrer" target="_blank"><span>Buka Demo</span><span class="material-symbols-outlined text-[14px]">arrow_outward</span></a>
+<a class="h-8 w-8 rounded-sm bg-zinc-900 border border-zinc-800 hover:border-zinc-600 flex items-center justify-center text-zinc-400 hover:text-white transition-colors" href="https://github.com/kycjojo/portofolio" rel="noopener noreferrer" target="_blank" title="Source Code">
+<span class="material-symbols-outlined text-[16px]">code</span>
+</a>
 </div>
 </div>
+
 </div>
+
 </section>
 <!-- SECTION: KEAHLIAN TEKNIS (TECH STACK & TOOLS) -->
 <section class="py-14 border-t border-zinc-800" id="keahlian">
@@ -815,6 +895,7 @@
 </div>
 <h2 class="font-sans text-2xl sm:text-3xl text-white font-bold tracking-tight mb-8">Tech Stack &amp; Tools</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
 <!-- Category 1: Bahasa Pemrograman -->
 <div class="p-5 rounded-sm mono-card flex flex-col gap-3">
 <div class="flex items-center gap-2 text-white">
@@ -823,14 +904,50 @@
 </div>
 <div class="flex flex-wrap gap-1.5 pt-1">
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Python</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">TypeScript</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">JavaScript</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">C</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Bash / Shell Scripting</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">JavaScript</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">PHP</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">SQL (SQLite)</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">PHP</span>
 </div>
 </div>
-<!-- Category 2: Sistem Operasi & Jaringan (ITNSA) -->
+
+<!-- Category 2: Mobile & Web Development -->
+<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[18px] text-zinc-400">smartphone</span>
+<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Mobile &amp; Web Development</h3>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">React Native</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Expo Framework</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">SQLite (WAL Mode)</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Zustand State Mgmt</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Tailwind CSS</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">HTML5 &amp; CSS3</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Hermes Bytecode</span>
+</div>
+</div>
+
+<!-- Category 3: Otomatisasi, Bot & Vision -->
+<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[18px] text-zinc-400">precision_manufacturing</span>
+<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Otomatisasi, Bot &amp; Vision</h3>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Telegram Bot API</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">MIS PENS API Integration</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">ThreadPoolExecutor</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Google Apps Script Webhooks</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">OpenCV (Computer Vision)</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">HMAC-SHA256 Token Signature</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">HTTP Keep-Alive Pooling</span>
+</div>
+</div>
+
+<!-- Category 4: Sistem Operasi & Jaringan (ITNSA) -->
 <div class="p-5 rounded-sm mono-card flex flex-col gap-3">
 <div class="flex items-center gap-2 text-white">
 <span class="material-symbols-outlined text-[18px] text-zinc-400">dns</span>
@@ -842,37 +959,10 @@
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">MikroTik RouterOS</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">DNS BIND9 &amp; Nginx</span>
 <span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Termux Android Host</span>
+<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Wireshark Packet Analysis</span>
 </div>
 </div>
-<!-- Category 3: Otomatisasi, Bot & Vision -->
-<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
-<div class="flex items-center gap-2 text-white">
-<span class="material-symbols-outlined text-[18px] text-zinc-400">precision_manufacturing</span>
-<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Otomatisasi, Bot &amp; Vision</h3>
-</div>
-<div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Telegram Bot API</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">ThreadPoolExecutor</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">OpenCV (Computer Vision)</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">HMAC-SHA256 Token Signature</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">HTTP Keep-Alive Pooling</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Webhook Payment Handler</span>
-</div>
-</div>
-<!-- Category 4: Alat Bantu & Workflow -->
-<div class="p-5 rounded-sm mono-card flex flex-col gap-3">
-<div class="flex items-center gap-2 text-white">
-<span class="material-symbols-outlined text-[18px] text-zinc-400">build</span>
-<h3 class="font-mono text-sm font-semibold tracking-wider uppercase text-white">Alat Bantu &amp; Workflow</h3>
-</div>
-<div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Git &amp; GitHub</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Visual Studio Code</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Android ADB</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Bootstrap 5</span>
-<span class="px-2.5 py-1 rounded-sm bg-zinc-950 border border-zinc-800 text-zinc-300 font-mono text-xs">Tailwind CSS</span>
-</div>
-</div>
+
 </div>
 </section>
 <!-- SECTION: PRESTASI & SERTIFIKASI -->
